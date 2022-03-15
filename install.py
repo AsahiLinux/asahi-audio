@@ -14,6 +14,7 @@ def get_system():
     We only want the model number, which is the 5 characters after "apple,"
     '''
     with open("/sys/firmware/devicetree/base/compatible", "r") as sys
+        sys = sys.read()
         system_compatible = sys[6:10]
 
     return system_compatible
