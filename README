@@ -1,0 +1,55 @@
+Linux Userspace Support for MacBook Pro J31x Internal Speakers
+
+This archive enables a sane experience with the builtin speakers
+on select Apple Silicon devices. The goal is to eventually support
+all of them.
+
+WARNING: WITH THE CURRENT STATE OF THE ART, EXPERIMENTING WITH THE SPEAKERS
+         COULD CAUSE THEM TO EXPLODE. DO NOT ATTEMPT THIS UNLESS YOU KNOW
+         WHAT YOU ARE DOING.
+
+Currently supported devices:
+MacBook Pro (14-inch, 2021)
+MacBook Pro (16-inch, 2021) [NOTE: I haven't actually tested these FIRs on the
+                                   16-inch. They should work, but may not sound
+                                   optimal. If anyone would like to send me a
+                                   machine for testing and calibration, feel
+                                   free to do so!]
+
+
+Prerequisites:
+    - PipeWire
+    - pipewire-media-session (WIREPLUMBER DOES NOT WORK!!!)
+    - The latest linux-asahi kernel
+
+Installation instructions:
+    1. Before playing ANY audio via the internal speakers, ensure that the
+       drivers are ALL turned down to 60 in alsamixer. Failure to do so could
+       make your speakers explode. Once this is set, everything else here is
+       safe.
+
+    2. Ensure you have met the prerequisites.
+
+    3. Copy the file 10-j31x-sink.conf to /etc/pipewire/pipewire.conf.d/
+
+    4. Make a new directory called /usr/share/alsa/impulse/apple/j31x/
+
+    5. Copy the contents of the FIRs directory in this archive to that folder
+
+    6. Set the default audio device to the Pro Audio profile
+
+    7. Reboot your machine
+
+    8. In your desktop environment, make sure all audio is set to play through
+       the newly created "MacBook Pro J31x Internal Speakers" device
+
+    9. Enjoy some music
+
+
+Special Thanks:
+    povik:  for a working kernel driver
+
+    marcan: for putting up with my insane ramblings on the state of the
+            GNU/Linux audio stack in #asahi-dev
+
+    whoever decided that PipeWire needed a built in convolver
