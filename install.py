@@ -1,8 +1,7 @@
 #!/usr/bin/env python3
 
 # SPDX-License-Identifier: MIT
-
-# (C) 2022 The Asahi Linux Contributors
+# (C) 2022 James Calligeros
 
 
 from shutil import copy2, copytree

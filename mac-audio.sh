@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # SPDX-License-Identifier: MIT
-# (C) 2022 The Asahi Linux Contributors
+# (C) 2022 James Calligeros
 
 set -e
 
