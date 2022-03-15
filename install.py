@@ -63,7 +63,7 @@ def main():
     print("Installing PipeWire configuration files...")
     install_pw_conf(machine)
 
-    print("Installing Fast Impulse Responses...")
+    print("Installing Finite Impulse Responses...")
     install_firs(machine)
 
 if __name__ == "__main__":
