@@ -15,7 +15,7 @@ def get_system():
     '''
     with open("/sys/firmware/devicetree/base/compatible", "r") as sys
         sys = sys.read()
-        system_compatible = sys[6:10]
+        system_compatible = sys[6:11]
 
     return system_compatible
 
