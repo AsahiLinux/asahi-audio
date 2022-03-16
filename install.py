@@ -13,7 +13,7 @@ def get_system():
 
     We only want the model number, which is the 5 characters after "apple,"
     '''
-    with open("/sys/firmware/devicetree/base/compatible", "r") as sys
+    with open("/sys/firmware/devicetree/base/compatible", "r") as sys:
         sys = sys.read()
         system_compatible = sys[6:11]
 
@@ -45,7 +45,7 @@ def install_pw_conf(system):
 def install_firs(system)
 
     ret = copytree(f"firs/{system}",
-                   f"/usr/share/pipewire/devices/apple/")
+                   f"/usr/share/pipewire/devices/apple/{system}")
     return ret
 
 
@@ -59,7 +59,7 @@ def main():
     print("zero. Do not continue until this has been done.")
     input("Press Enter to continue...")
 
-    print("Setting device profile to Pro Audio...")
+    print("\nSetting device profile to Pro Audio...")
     set_dev_profile(machine)
 
     print("Installing PipeWire configuration files...")
