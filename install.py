@@ -44,7 +44,8 @@ def install_pw_conf(system):
 
 def install_firs(system)
 
-    ret = copytree(f"firs/{system}", "/usr/share/alsa/impulse/apple/")
+    ret = copytree(f"firs/{system}",
+                   f"/usr/share/pipewire/devices/apple/")
     return ret
 
 
