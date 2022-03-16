@@ -14,6 +14,11 @@ echo "We will now set up your Apple Silicon Mac's integrated audio."
 echo
 read -sp "Press Enter to continue..."
 
+if [[ -n /usr/share/pipewire/devices/apple/ ]] then;
+    echo "Install directory does not exist. Creating..."
+    mkdir -p /usr/share/pipewire/devices/apple/
+fi
+
 exec python3 install.py
 echo "Restarting PipeWire..."
 killall pipewire
