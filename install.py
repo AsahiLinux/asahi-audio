@@ -42,7 +42,7 @@ def install_pw_conf(system):
     return ret
 
 
-def install_firs(system)
+def install_firs(system):
 
     ret = copytree(f"firs/{system}",
                    f"/usr/share/pipewire/devices/apple/{system}")
