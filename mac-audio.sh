@@ -22,6 +22,13 @@ else
     mkdir -p /usr/share/pipewire/devices/apple/
 fi
 
+if [[ -d /etc/pipewire/media-session.d/ ]]; then
+    echo "Session manager dir already exists."
+else
+    echo "Session manager directory does not exist. Creating..."
+    mkdir -p /etc/pipewire/media-session.d/
+fi
+
 python3 install.py
 
 echo "Restarting PipeWire..."
