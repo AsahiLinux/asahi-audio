@@ -5,19 +5,30 @@
 
 
 from shutil import copy2, copytree
-from os import system
+from os import system, scandir
 
 def get_system():
     '''
-    Get the system compatible string from the DT.
+    Get the system compatible string from the DT, and exit if we do not support
+    it.
 
     We only want the model number, which is the 5 characters after "apple,"
     '''
+    supported = []
+
+    for d in scandir('conf'):
+        if d.is_dir():
+            supported.append(d)
+
     with open("/sys/firmware/devicetree/base/compatible", "r") as sys:
         sys = sys.read()
         system_compatible = sys[6:11]
 
-    return system_compatible
+    if system_compatible in supported:
+        return system_compatible
+    else:
+        print(f"Sorry, your machine is not supported at this current time.")
+        exit()
 
 
 def set_dev_profile(system):
