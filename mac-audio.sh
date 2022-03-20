@@ -6,8 +6,9 @@
 set -e
 
 if [[ $(whoami) != "root" ]]; then
-    echo "You must run this script as root."
-    exit
+    echo "This script must be run as root. When prompted, please type your"
+    echo "user account password."
+    sudo -s
 fi
 
 echo "We will now set up your Apple Silicon Mac's integrated audio."
@@ -30,17 +31,3 @@ else
 fi
 
 python3 install.py
-
-echo "Restarting PipeWire..."
-killall pipewire
-
-echo
-echo "A new audio device should now be available to route audio."
-echo "For best results, make sure your DE selects it as the default"
-echo "device. Do not adjust alsamixer from here on out, all volume"
-echo "should be controlled via this new device."
-echo
-echo "Rebooting is highly encouraged and sometimes required to ensure"
-echo "all changes take effect."
-echo
-exit

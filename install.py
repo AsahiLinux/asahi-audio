@@ -8,12 +8,7 @@ from shutil import copy2, copytree
 from os import system, scandir
 
 def get_system():
-    '''
-    Get the system compatible string from the DT, and exit if we do not support
-    it.
-
-    We only want the model number, which is the 5 characters after "apple,"
-    '''
+    # Use the list of subdirs in 'conf' as our list of supported machines
     supported = []
 
     for d in scandir('conf'):
@@ -22,13 +17,12 @@ def get_system():
 
     with open("/sys/firmware/devicetree/base/compatible", "r") as sys:
         sys = sys.read()
-        system_compatible = sys[6:11]
+        compat = sys[6:11] # Get only the 5 chars after 'apple,'
 
-    if system_compatible in supported:
-        return system_compatible
+    if compat in supported:
+        return compat
     else:
-        print(f"Sorry, your machine is not supported at this current time.")
-        exit()
+        return -1
 
 
 def set_dev_profile(system):
@@ -40,8 +34,6 @@ def set_dev_profile(system):
 
 def install_pw_conf(system):
     '''
-    Install the system-depdent PipeWire config file
-
     Since the audio stack is dumb and cannot pick and choose configurations
     for us on the fly, we must install a specific configuration based on the
     user's machine. Luckily, it's all pretty trivial stuff.
@@ -63,6 +55,10 @@ def install_firs(system):
 def main():
     machine = get_system()
 
+    if machine == -1:
+        print(f"Sorry, the {machine} is not currently supported.")
+        exit()
+
     print(f"This machine is a {machine}.\n")
 
     print("Before we continue, please ensure that you have set every speaker to")
@@ -73,11 +69,18 @@ def main():
     print("\nSetting device profile to Pro Audio...")
     set_dev_profile(machine)
 
+
     print("Installing PipeWire configuration files...")
     install_pw_conf(machine)
 
     print("Installing Finite Impulse Responses...")
     install_firs(machine)
+
+    print("Restarting PipeWire...")
+    system("killall pipewire")
+    sleep(2) # Wait until PW has actually restarted
+
+    echo
 
 if __name__ == "__main__":
     main()
