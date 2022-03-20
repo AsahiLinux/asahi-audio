@@ -6,9 +6,9 @@
 set -e
 
 if [[ $(whoami) != "root" ]]; then
-    echo "This script must be run as root. When prompted, please type your"
-    echo "user account password."
-    sudo -s
+    echo "This script must be run as root. Please type your root"
+    echo "password if prompted to do so."
+    sudo ./mac-audio.sh
 fi
 
 echo "We will now set up your Apple Silicon Mac's integrated audio."
