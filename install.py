@@ -25,13 +25,6 @@ def get_system():
         return -1
 
 
-def set_dev_profile(system):
-    ret = copy2(f"conf/{system}/session.conf",
-                f"/etc/pipewire/media-session.d/10-{system}.conf")
-
-    return ret
-
-
 def install_pw_conf(system):
     '''
     Since the audio stack is dumb and cannot pick and choose configurations
@@ -65,10 +58,6 @@ def main():
     print("60 percent in alsamixer. Make sure the 'Amp Gain' sliders are set to")
     print("zero. Do not continue until this has been done.")
     input("Press Enter to continue...")
-
-    print("\nSetting device profile to Pro Audio...")
-    set_dev_profile(machine)
-
 
     print("Installing PipeWire configuration files...")
     install_pw_conf(machine)
