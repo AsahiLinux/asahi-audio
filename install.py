@@ -31,18 +31,33 @@ def install_pw_conf(system):
     for us on the fly, we must install a specific configuration based on the
     user's machine. Luckily, it's all pretty trivial stuff.
     '''
-
-    ret = copy2(f"conf/{system}/sink.conf",
-                f"/etc/pipewire/pipewire.conf.d/10-{system}-sink.conf")
-
-    return ret
+    try:
+        copy2(f"conf/{system}/sink.conf",
+              f"/etc/pipewire/pipewire.conf.d/10-{system}-sink.conf")
+    except SameFileError:
+        choice = input("Files are identical. Replace? (y/N)")
+        if choice == "y":
+            system(f"rm -rf /etc/pipewire/pipewire.conf.d/10-{system}-sink.conf")
+            copy2(f"conf/{system}/sink.conf",
+                  f"/etc/pipewire/pipewire.conf.d/10-{system}-sink.conf")
+            return
+        else:
+            return -1
 
 
 def install_firs(system):
-
-    ret = copytree(f"firs/{system}",
-                   f"/usr/share/pipewire/devices/apple/{system}")
-    return ret
+    try:
+        copytree(f"firs/{system}",
+                 f"/usr/share/pipewire/devices/apple/{system}")
+    except SameFileError:
+        choice = input("Files are identical. Replace? (y/N)")
+        if choice == "y":
+            system(f"rm -rf /usr/share/pipewire/devices/apple/{system}")
+            copytree(f"firs/{system}",
+                     f"/usr/share/pipewire/devices/apple/{system}")
+            return
+        else:
+            return -1
 
 
 def main():
@@ -59,17 +74,32 @@ def main():
     print("zero. Do not continue until this has been done.")
     input("Press Enter to continue...")
 
-    print("Installing PipeWire configuration files...")
-    install_pw_conf(machine)
+    print("Installing PipeWire configuration files...\n")
+    pwret = install_pw_conf(machine)
+    if pwret == -1:
+        print("Could not install PipeWire configuration files.")
+        print("This program will now exit.")
+        exit()
 
-    print("Installing Finite Impulse Responses...")
-    install_firs(machine)
+    print("Installing Finite Impulse Responses...\n")
+    irret = install_firs(machine)
+    if irret == -1:
+        print("Could not install FIRs.")
+        print("This program will now exit.")
+        exit()
 
-    print("Restarting PipeWire...")
+
+    print("Please put the current built-in audio device into the Pro Audio")
+    print("profile. Do not continue until you have done this.")
+    input("Press Enter to continue...\n")
+
+    print("Restarting PipeWire...\n")
     system("killall pipewire")
     sleep(2) # Wait until PW has actually restarted
 
-    echo
+    print("A new audio device should now have appeared. Make sure your DE is set")
+    print("to use this as the default device for all audio streams. Sometimes,")
+    print("a reboot is neccessary for changes to take proper effect.")
 
 if __name__ == "__main__":
     main()
