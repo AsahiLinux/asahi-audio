@@ -4,25 +4,22 @@
 # (C) 2022 James Calligeros
 
 
-from shutil import copy2, copytree
-from os import system, scandir
+import os
+import shutil
+import time
 
 def get_system():
     # Use the list of subdirs in 'conf' as our list of supported machines
-    supported = []
-
-    for d in scandir('conf'):
-        if d.is_dir():
-            supported.append(d)
+    supported = os.listdir(path="./conf/")
 
     with open("/sys/firmware/devicetree/base/compatible", "r") as sys:
         sys = sys.read()
         compat = sys[6:11] # Get only the 5 chars after 'apple,'
 
-    if compat in supported:
-        return compat
-    else:
-        return -1
+        if compat in supported:
+            return compat
+        else:
+            return -1
 
 
 def install_pw_conf(system):
@@ -32,14 +29,14 @@ def install_pw_conf(system):
     user's machine. Luckily, it's all pretty trivial stuff.
     '''
     try:
-        copy2(f"conf/{system}/sink.conf",
-              f"/etc/pipewire/pipewire.conf.d/10-{system}-sink.conf")
-    except SameFileError:
+        shutil.copy2(f"conf/{system}/sink.conf",
+                     f"/etc/pipewire/pipewire.conf.d/10-{system}-sink.conf")
+    except FileExistsError:
         choice = input("Files are identical. Replace? (y/N)")
         if choice == "y":
-            system(f"rm -rf /etc/pipewire/pipewire.conf.d/10-{system}-sink.conf")
-            copy2(f"conf/{system}/sink.conf",
-                  f"/etc/pipewire/pipewire.conf.d/10-{system}-sink.conf")
+            os.remove(f"/etc/pipewire/pipewire.conf.d/10-{system}-sink.conf")
+            shutil.copy2(f"conf/{system}/sink.conf",
+                         f"/etc/pipewire/pipewire.conf.d/10-{system}-sink.conf")
             return
         else:
             return -1
@@ -47,14 +44,14 @@ def install_pw_conf(system):
 
 def install_firs(system):
     try:
-        copytree(f"firs/{system}",
-                 f"/usr/share/pipewire/devices/apple/{system}")
-    except SameFileError:
+        shutil.copytree(f"firs/{system}",
+                        f"/usr/share/pipewire/devices/apple/{system}")
+    except FileExistsError:
         choice = input("Files are identical. Replace? (y/N)")
         if choice == "y":
-            system(f"rm -rf /usr/share/pipewire/devices/apple/{system}")
-            copytree(f"firs/{system}",
-                     f"/usr/share/pipewire/devices/apple/{system}")
+            shutil.rmtree(f"/usr/share/pipewire/devices/apple/{system}")
+            shutil.copytree(f"firs/{system}",
+                            f"/usr/share/pipewire/devices/apple/{system}")
             return
         else:
             return -1
@@ -94,8 +91,8 @@ def main():
     input("Press Enter to continue...\n")
 
     print("Restarting PipeWire...\n")
-    system("killall pipewire")
-    sleep(2) # Wait until PW has actually restarted
+    os.system("killall pipewire")
+    time.sleep(2) # Wait until PW has actually restarted
 
     print("A new audio device should now have appeared. Make sure your DE is set")
     print("to use this as the default device for all audio streams. Sometimes,")
