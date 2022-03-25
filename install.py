@@ -14,7 +14,7 @@ def get_system():
 
     with open("/sys/firmware/devicetree/base/compatible", "r") as sys:
         sys = sys.read()
-        compat = sys[6:11] # Get only the 5 chars after 'apple,'
+        compat = sys[6:10] # Get only the 4 chars after 'apple,'
 
         if compat in supported:
             return compat
