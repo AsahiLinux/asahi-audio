@@ -90,13 +90,13 @@ def main():
     print("profile. Do not continue until you have done this.")
     input("Press Enter to continue...\n")
 
-    print("Restarting PipeWire...\n")
+    print("Killing PipeWire...\n")
     os.system("killall pipewire")
-    time.sleep(2) # Wait until PW has actually restarted
+    time.sleep(2)
 
-    print("A new audio device should now have appeared. Make sure your DE is set")
-    print("to use this as the default device for all audio streams. Sometimes,")
-    print("a reboot is neccessary for changes to take proper effect.")
+    print("PipeWire has been stopped. Please reboot your machine for the")
+    print("changes to take effect. Logging out and logging in again is not")
+    print("sufficient.")
 
 if __name__ == "__main__":
     main()
