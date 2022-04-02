@@ -49,7 +49,7 @@ they are more than capable of being.
 ## Prerequisites
 * PipeWire
 * pipewire-pulse
-* pipewire-media-session (_do not use WirePlumber unless you know what you are doing_)
+* pipewire-media-session _or_ WirePlumber
 * The latest linux-asahi kernel
 
 ## Installation instructions
