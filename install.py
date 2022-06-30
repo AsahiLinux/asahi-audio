@@ -67,8 +67,8 @@ def main():
     print(f"This machine is a {machine}.\n")
 
     print("Before we continue, please ensure that you have set every speaker to")
-    print("60 percent in alsamixer. Make sure the 'Amp Gain' sliders are set to")
-    print("zero. Do not continue until this has been done.")
+    print("70 percent in alsamixer. Do not touch the 'Amp Gain' sliders or any")
+    print("other setting.")
     input("Press Enter to continue...")
 
     print("Installing PipeWire configuration files...\n")
