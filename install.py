@@ -12,6 +12,10 @@ def get_system():
     # Use the list of subdirs in 'conf' as our list of supported machines
     supported = os.listdir(path="./conf/")
 
+    # Get rid of '.conf'
+    for i, machine in enumerate(supported):
+        supported[i] = machine[0:4]
+
     with open("/sys/firmware/devicetree/base/compatible", "r") as sys:
         sys = sys.read()
         compat = sys[6:10] # Get only the 4 chars after 'apple,'
