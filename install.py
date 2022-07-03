@@ -33,13 +33,13 @@ def install_pw_conf(system):
     user's machine. Luckily, it's all pretty trivial stuff.
     '''
     try:
-        shutil.copy2(f"conf/{system}/sink.conf",
+        shutil.copy2(f"conf/{system}.conf",
                      f"/etc/pipewire/pipewire.conf.d/10-{system}-sink.conf")
     except FileExistsError:
         choice = input("Files are identical. Replace? (y/N)")
         if choice == "y":
             os.remove(f"/etc/pipewire/pipewire.conf.d/10-{system}-sink.conf")
-            shutil.copy2(f"conf/{system}/sink.conf",
+            shutil.copy2(f"conf/{system}.conf",
                          f"/etc/pipewire/pipewire.conf.d/10-{system}-sink.conf")
             return
         else:
