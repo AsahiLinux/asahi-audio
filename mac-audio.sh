@@ -22,6 +22,16 @@ else
         mkdir -p /usr/share/pipewire/devices/apple/
     fi
 
+    if [[ ! -d /etc/pipewire/ ]]; then
+        echo "Creating default Pipewire configuration directory..."
+        mkdir -p /etc/pipewire/pipewire.conf.d/
+    else
+        if [[ ! -d /etc/pipewire/pipewire.conf.d/ ]]; then
+            echo "Creating pipewire.conf.d..."
+            mkdir -p /etc/pipewire/pipewire.conf.d/
+        fi
+    fi
+
     python3 install.py
 
 
