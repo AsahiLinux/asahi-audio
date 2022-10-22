@@ -36,14 +36,14 @@ def install_pw_conf(system):
         shutil.copy2(f"conf/{system}.conf",
                      f"/etc/pipewire/pipewire.conf.d/10-{system}-sink.conf")
     except FileExistsError:
-        choice = input("Files are identical. Replace? (y/N)")
-        if choice == "y":
+        choice = input("File exists. Replace? (Y/n)")
+        if choice == "n":
+            return -1
+        else:
             os.remove(f"/etc/pipewire/pipewire.conf.d/10-{system}-sink.conf")
             shutil.copy2(f"conf/{system}.conf",
                          f"/etc/pipewire/pipewire.conf.d/10-{system}-sink.conf")
             return
-        else:
-            return -1
 
 
 def install_firs(system):
@@ -51,14 +51,14 @@ def install_firs(system):
         shutil.copytree(f"firs/{system}",
                         f"/usr/share/pipewire/devices/apple/{system}")
     except FileExistsError:
-        choice = input("Files are identical. Replace? (y/N)")
-        if choice == "y":
+        choice = input("Files exist. Replace? (Y/n)")
+        if choice == "n":
+            return -1
+        else:
             shutil.rmtree(f"/usr/share/pipewire/devices/apple/{system}")
             shutil.copytree(f"firs/{system}",
                             f"/usr/share/pipewire/devices/apple/{system}")
             return
-        else:
-            return -1
 
 
 def main():
