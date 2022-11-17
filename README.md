@@ -16,38 +16,26 @@ Brought to you by the Asahi Linux team.
 
 ## Installation instructions
 
-1. Before playing ANY audio via the internal speakers, ensure that the
-drivers are ALL turned down to 70 in `alsamixer`. Failure to do so could
-damage your machine. Once this is set, everything else here is
-safe.
-
-2. Ensure you have met the prerequisites.
+1. Ensure you have met the prerequisites.
 
 3. Clone this repo and cd into its directory.
 
 3. Run `mac-audio.sh` and follow the instructions.
 
-## How it works
-If you were under the impression that society somehow learnt how to
-make small speaker cones that sound good, you were mistaken. Small speakers
-in devices like laptops and phones still suck as hard as they did 15 years ago.
-
-What has changed is how much computing power is available in these devices. Thanks
-to the advent of highly efficient FFT algorithms, we can transform the audio signal
-before it gets to the speakers using Impulse Responses, which can be thought of as
-the mathematical representation of an EQ curve.
 
 ## Why you want it
-These Apple Silicon Macs aren't magic. As already discussed, small speakers
-will invariably sound like crap if left to their own devices. Apple gets around
-this by using Impulse Responses much in the same way we do. Unfortunately, the
-way they tuned these machines leaves a lot to be desired.
+There are a few reasons why this package is necessary.
 
-Luckily, they implemented this in macOS rather than firmware, which means that
-we get to roll our own EQ curve for these machines. This lets us tune them for
-a much more dynamic, natural sound that you'd expect from expensive professional
-machines. This lets us say that we have better audio quality than macOS does!
+ASoC exposes the speaker array as six independent drivers - two woofers and
+a tweeter each for Left and Right. We want userspace to see this as a standard
+stereo speaker pair. The configuration fragment shipped in this package sets up
+a virtual sink that takes a stereo input and routes it appropriately to each driver.
 
+We then run into another issue - the speakers sound awful. Turns out Macs aren't
+magic, they sound good because Apple invest a lot of engineering effort into DSP.
+Apple actually handle this with odd bespoke Core Audio plugins. We use PipeWire's
+convolver plugin to apply impulse responses to each driver, which effectively EQs
+the output signals.
 
 ### Special Thanks:
 * povik
