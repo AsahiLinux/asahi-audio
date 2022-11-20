@@ -11,6 +11,7 @@ Brought to you by the Asahi Linux team.
 * PipeWire
 * pipewire-pulse
 * WirePlumber (pipewire-media-session is no longer supported)
+* LSP Plugins (you _must_ have the LV2 set of plugins installed)
 * The latest linux-asahi kernel
 * Audio enabled in your devicetree (read the dislaimer)
 
