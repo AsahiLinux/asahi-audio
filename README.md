@@ -7,9 +7,9 @@ Brought to you by the Asahi Linux team.
 * MacBook Pro (14-inch, 2021)
 
 ## Prerequisites
-* PipeWire
+* PipeWire - **minimum version 0.3.65**
 * pipewire-pulse
-* WirePlumber (pipewire-media-session is no longer supported)
+* WirePlumber
 * LSP Plugins (you _must_ have the LV2 set of plugins installed)
 * The latest linux-asahi kernel
 * Audio enabled in your devicetree (read the dislaimer)
@@ -18,10 +18,9 @@ Brought to you by the Asahi Linux team.
 
 1. Ensure you have met the prerequisites.
 
-3. Clone this repo and cd into its directory.
+2. Clone this repo and cd into its directory.
 
 3. Run `mac-audio.sh` and follow the instructions.
-
 
 ## Why you want it
 There are a few reasons why this package is necessary.
@@ -42,7 +41,7 @@ the output signals.
 
 * marcan
 
-* whoever implemented the convolver in PipeWire
+* d3dx12.xx
 
 ### Disclaimer
 Audio support in Linux is still very much a work in progress. The kernel driver
