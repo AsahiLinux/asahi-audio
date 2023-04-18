@@ -4,7 +4,10 @@ Brought to you by the Asahi Linux team.
 
 ## Supported Devices
 
+* Mac mini (M1, 2020)
 * MacBook Pro (14-inch, 2021)
+* Mac mini (M2, 2023)
+* Mac mini (M2 Pro/Max, 2023)
 
 ## Prerequisites
 * PipeWire - **minimum version 0.3.65**
