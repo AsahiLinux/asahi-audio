@@ -22,7 +22,7 @@ def get_system():
 
         if compat in supported:
             return compat
-        elif compat in ("j474", "j274"): # add handling for minis
+        elif compat in ("j473", "j474", "j274"): # add handling for minis
             return "mini"
         else:
             return -1
