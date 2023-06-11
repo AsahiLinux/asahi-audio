@@ -2,6 +2,12 @@
 
 Brought to you by the Asahi Linux team.
 
+## IMPORTANT
+This software is still pre-release and not ready for user consumption or
+beta testing. Please do not ask for help with installing this, or enabling
+speaker support on your machine. An announcement will be made when speaker
+support ready for wider release.
+
 ## Supported Devices
 
 * MacBook Pro (14-inch, 2021)
