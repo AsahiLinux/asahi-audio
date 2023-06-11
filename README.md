@@ -16,19 +16,10 @@ support ready for wider release.
 ## Prerequisites
 * PipeWire
 * pipewire-pulse
-* WirePlumber (pipewire-media-session is no longer supported)
+* WirePlumber with eleven secret herbs and spices
 * LSP Plugins (you _must_ have the LV2 set of plugins installed)
 * The latest linux-asahi kernel
 * Audio enabled in your devicetree (read the dislaimer)
-
-## Installation instructions
-
-1. Ensure you have met the prerequisites.
-
-3. Clone this repo and cd into its directory.
-
-3. Run `mac-audio.sh` and follow the instructions.
-
 
 ## Why you want it
 There are a few reasons why this package is necessary.
@@ -52,9 +43,8 @@ the output signals.
 * whoever implemented the convolver in PipeWire
 
 ### Disclaimer
-Audio support in Linux is still very much a work in progress. The kernel driver
-currently makes no effort to diminish your ability to destroy your machine through
-misconfigured settings in userspace. Much like early Chromebooks, it is entirely
-possible to overdrive these speakers and amps from userspace such that they
-are permanently damaged. If you follow the instructions here, no harm should come
-to your machine.
+Speaker support is still a work in progress, and no guarantees as to its safety
+or quality are made. As above, no support whatsoever will be provided to users
+regarding the installation or use of any speaker-related items until public
+support has been announced. You assume all risk to - and responsibility for -
+your machine should you choose to try and use the speakers.
