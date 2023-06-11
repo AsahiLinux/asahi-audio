@@ -15,20 +15,20 @@ else
     read -sp "Press Enter to continue..."
     echo
 
-    if [[ -d /usr/share/pipewire/devices/apple/ ]]; then
+    if [[ -d /usr/share/asahi-audio/ ]]; then
         echo "Installation directory already exists."
     else
         echo "Install directory does not exist. Creating..."
-        mkdir -p /usr/share/pipewire/devices/apple/
+        mkdir -p /usr/share/asahi-audio/
     fi
 
     if [[ ! -d /etc/pipewire/ ]]; then
         echo "Creating default Pipewire configuration directory..."
-        mkdir -p /etc/pipewire/pipewire.conf.d/
+        mkdir -p /etc/wireplumber/policy.lua.d/
     else
-        if [[ ! -d /etc/pipewire/pipewire.conf.d/ ]]; then
+        if [[ ! -d /etc/wireplumber/policy.lua.d/ ]]; then
             echo "Creating pipewire.conf.d..."
-            mkdir -p /etc/pipewire/pipewire.conf.d/
+            mkdir -p /etc/wireplumber/policy.lua.d/
         fi
     fi
 

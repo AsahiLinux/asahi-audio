@@ -33,31 +33,31 @@ def install_pw_conf(system):
     user's machine. Luckily, it's all pretty trivial stuff.
     '''
     try:
-        shutil.copy2(f"conf/{system}.conf",
-                     f"/etc/pipewire/pipewire.conf.d/10-{system}-sink.conf")
+        shutil.copy2(f"conf/99-asahi.lua",
+                     f"/etc/wireplumber/policy.lua.d/99-asahi.lua")
     except FileExistsError:
         choice = input("File exists. Replace? (Y/n)")
         if choice == "n":
             return -1
         else:
-            os.remove(f"/etc/pipewire/pipewire.conf.d/10-{system}-sink.conf")
-            shutil.copy2(f"conf/{system}.conf",
-                         f"/etc/pipewire/pipewire.conf.d/10-{system}-sink.conf")
+            os.remove(f"/etc/wireplumber/policy.lua.d/99-asahi.lua")
+            shutil.copy2(f"conf/99-asahi.lua",
+                         f"/etc/wireplumber/policy.lua.d/99-asahi.lua")
             return
 
 
 def install_firs(system):
     try:
         shutil.copytree(f"firs/{system}",
-                        f"/usr/share/pipewire/devices/apple/{system}")
+                        f"/usr/share/asahi-audio/{system}")
     except FileExistsError:
         choice = input("Files exist. Replace? (Y/n)")
         if choice == "n":
             return -1
         else:
-            shutil.rmtree(f"/usr/share/pipewire/devices/apple/{system}")
+            shutil.rmtree(f"/usr/share/asahi-audio/{system}")
             shutil.copytree(f"firs/{system}",
-                            f"/usr/share/pipewire/devices/apple/{system}")
+                            f"/usr/share/asahi-audio/{system}")
             return
 
 
