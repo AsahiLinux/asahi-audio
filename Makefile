@@ -17,7 +17,11 @@ j316: core
 	install -dD $(DESTDIR)/$(PREFIX)/asahi-audio/j316/
 	install -m0644 -t $(DESTDIR)/$(PREFIX)/asahi-audio/j316/ $(wildcard firs/j316/*.wav)
 
-install: core j314 j316
+mini: core
+	install -dD $(DESTDIR)/$(PREFIX)/asahi-audio/mini/
+	install -m0644 -t $(DESTDIR)/$(PREFIX)/asahi-audio/mini/ $(wildcard firs/mini/*.wav)
+
+install: core j314 j316 mini
 
 uninstall:
 	rm -f $(DESTDIR)/$(WP_DIR)/policy.lua.d/99-asahi.lua
