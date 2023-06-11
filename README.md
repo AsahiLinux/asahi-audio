@@ -12,6 +12,7 @@ support ready for wider release.
 
 * MacBook Pro (14-inch, 2021)
 * MacBook Pro (16-inch, 2021) (_uses same EQ as J314, probably sounds bad!_)
+* Mac mini (M2 Pro, 2023)
 
 ## Prerequisites
 * PipeWire
