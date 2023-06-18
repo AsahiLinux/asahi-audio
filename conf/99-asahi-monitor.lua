@@ -1,6 +1,6 @@
 -- SPDX-License-Identifier: MIT
 -- Device naming rules for Apple Silicon Macs
--- (C) 2023 The Asahi Linux Contributors
+-- Copyright (C) 2023 The Asahi Linux Contributors
 
 jack_rename = {
   matches = {

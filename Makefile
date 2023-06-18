@@ -4,6 +4,8 @@
 PREFIX = /usr/share
 WP_DIR = /etc/wireplumber
 
+default:
+
 core:
 	install -dD $(DESTDIR)/$(WP_DIR)/policy.lua.d/
 	install -dD $(DESTDIR)/$(WPDIR)/main.lua.d/

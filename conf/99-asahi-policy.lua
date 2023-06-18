@@ -1,6 +1,6 @@
 -- SPDX-License-Identifier: MIT
 -- Wireplumber DSP configuration for Apple Silicon Macs
--- (C) 2023 The Asahi Linux Contributors
+-- Copyright (C) 2023 The Asahi Linux Contributors
 
 -- J314 (MacBook Pro 14", M1 Pro/Max, 2021)
 j314 = {
