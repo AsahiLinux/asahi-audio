@@ -5,8 +5,10 @@ PREFIX = /usr/share
 WP_DIR = /etc/wireplumber
 
 core:
-	install -dD $(DESTDIR)/etc/wireplumber/policy.lua.d/
-	install -m0644 conf/99-asahi.lua $(DESTDIR)/$(WP_DIR)/policy.lua.d/99-asahi.lua
+	install -dD $(DESTDIR)/$(WP_DIR)/policy.lua.d/
+	install -dD $(DESTDIR)/$(WPDIR)/main.lua.d/
+	install -m0644 conf/99-asahi-policy.lua $(DESTDIR)/$(WP_DIR)/policy.lua.d/99-asahi-policy.lua
+	install -m0644 conf/99-asahi-monitor.lua $(DESTDIR)/$(WP_DIR)/main.lua.d/99-asahi-monitor.lua
 	install -dD $(DESTDIR)/$(PREFIX)/asahi-audio/
 
 j314: core
@@ -25,4 +27,5 @@ install: core j314 j316 mini
 
 uninstall:
 	rm -f $(DESTDIR)/$(WP_DIR)/policy.lua.d/99-asahi.lua
+	rm -f $(DESTDIR)/$(WP_DIR)/main.lua.d/99-asahi-monitor.lua
 	rm -rf $(DESTDIR)/$(PREFIX)/asahi-audio/
