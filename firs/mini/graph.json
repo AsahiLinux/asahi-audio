@@ -1,0 +1,53 @@
+{
+    "node.description": "Mac mini Speaker",
+    "media.name": "Mac mini Speaker",
+    "filter.graph": {
+        "nodes": [
+            {
+                "type": "builtin",
+                "label": "mixer",
+                "name": "mix",
+                "control": {
+                    "Gain 1": "0.5",
+                    "Gain 2": "0.5"
+                }
+            },
+            {
+                "type": "builtin",
+                "label": "convolver",
+                "name": "conv",
+                "config": {
+                    "filename": [
+                        "/usr/share/asahi-audio/mini/441.wav",
+                        "/usr/share/asahi-audio/mini/48.wav",
+                        "/usr/share/asahi-audio/mini/96.wav",
+                        "/usr/share/asahi-audio/mini/192.wav"
+                    ],
+                    "channel": "0"
+                }
+            }
+        ],
+        "links": [
+            {"output": "mix:Out", "input": "conv:In"}
+        ],
+        "inputs": [
+            "mix:In 1",
+            "mix:In 2"
+        ],
+        "outputs": [
+            "conv:Out"
+        ]
+    },
+    "capture.props": {
+        "node.name": "audio_effect.mini-convolver",
+        "media.class": "Audio/Sink",
+        "audio.channels": "2",
+        "audio.position": ["FL", "FR"]
+    },
+    "playback.props": {
+        "node.target": "alsa_output.platform-sound.pro-output-1",
+        "node.passive": "true",
+        "audio.channels": "1",
+        "audio.position": ["AUX0"]
+    }
+}
