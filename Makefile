@@ -3,14 +3,17 @@
 
 PREFIX = /usr/share
 WP_DIR = /etc/wireplumber
+PW_DIR = /etc/pipewire
 
 default:
 
 core:
 	install -dD $(DESTDIR)/$(WP_DIR)/policy.lua.d/
 	install -dD $(DESTDIR)/$(WP_DIR)/main.lua.d/
+	install -dD $(DESTDIR)/$(PW_DIR)/pipewire.conf.d/
 	install -m0644 conf/99-asahi-policy.lua $(DESTDIR)/$(WP_DIR)/policy.lua.d/99-asahi-policy.lua
 	install -m0644 conf/99-asahi-monitor.lua $(DESTDIR)/$(WP_DIR)/main.lua.d/99-asahi-monitor.lua
+	install -m0644 conf/99-asahi.conf $(DESTDIR)/$(PW_DIR)/pipewire.conf.d/99-asahi.conf
 	install -dD $(DESTDIR)/$(PREFIX)/asahi-audio/
 
 j314: core
@@ -31,3 +34,4 @@ uninstall:
 	rm -f $(DESTDIR)/$(WP_DIR)/policy.lua.d/99-asahi.lua
 	rm -f $(DESTDIR)/$(WP_DIR)/main.lua.d/99-asahi-monitor.lua
 	rm -rf $(DESTDIR)/$(PREFIX)/asahi-audio/
+	rm -rf $(DESTDIR)/$(PW_DIR)/pipewire.conf.d/99-asahi.conf
