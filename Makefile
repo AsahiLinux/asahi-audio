@@ -1,9 +1,9 @@
 # SPDX-License-Identifier: MIT
 # Copyright (C) 2023 The Asahi Linux Contributors
 
-PREFIX = /usr/share
-WP_DIR = /etc/wireplumber
-PW_DIR = /etc/pipewire
+PREFIX ?= /usr/share
+WP_DIR ?= /etc/wireplumber
+PW_DIR ?= /etc/pipewire
 
 default:
 
