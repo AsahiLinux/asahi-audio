@@ -5,39 +5,55 @@
         "nodes": [
             {
                 "type": "lv2",
-                "plugin": "http://lsp-plug.in/plugins/lv2/dyna_processor_stereo",
+                "plugin": "http://lsp-plug.in/plugins/lv2/mb_compressor_stereo",
                 "name": "compressor",
                 "control": {
                     "g_in": 1,
                     "g_out": 1,
-                    "pause": 1,
-                    "sct": 0,
-                    "scm": 1,
-                    "sla": 20.0,
-                    "scl": 0,
-                    "scs": 0,
-                    "scr": 100.0,
-                    "scp": 1,
-                    "cm": 0,
-                    "atd": 10.0,
-                    "rtd": 350.0,
-                    "pe0": 1,
-                    "tl0": 0.50,
-                    "gl0": 0.12,
-                    "kn0": 0.4,
-                    "llr": 0.82,
-                    "hlr": 30,
-                    "omk": 1,
-                    "cdr": 0,
-                    "cwt": 1,
-                    "slv": 0,
-                    "elv": 0,
-                    "grv": 0,
-                    "ilv_l": 0,
-                    "olv_l": 0,
-                    "ilv_r": 0,
-                    "olv_r": 0
+                    "g_dry": 0,
+                    "g_wet": 1,
+                    "ce_0": 1,
+                    "sla_0": 20.0,
+                    "scr_0": 10.0,
+                    "al_0": 0.25,
+                    "at_0": 5.85,
+                    "rrl_0": 0.600,
+                    "rt_0": 340.0,
+                    "cr_0": 3.5,
+                    "kn_0": 0.06310,
+                    "cbe_1": 1,
+                    "sf_1": 420.0,
+                    "ce_1": 1,
+                    "sla_1": 20.0,
+                    "scr_1": 10.0,
+                    "al_1": 0.165,
+                    "at_1": 5.85,
+                    "rrl_1": 0.75,
+                    "rt_1": 340.0,
+                    "cr_1": 4.5,
+                    "kn_1": 0.06310,
+                    "cbe_6": 1,
+                    "sf_6": 2060.0,
+                    "ce_6": 1,
+                    "sla_6": 20.0,
+                    "scr_6": 10.0,
+                    "al_6": 0.65,
+                    "at_6": 5.85,
+                    "rrl_6": 0.185,
+                    "rt_6": 340.0,
+                    "cr_6": 1.175,
+                    "kn_6": 0.06310,
                 }
+            },
+            {
+                "type": "builtin",
+                "label": "copy",
+                "name": "copyL"
+            },
+            {
+                "type": "builtin",
+                "label": "copy",
+                "name": "copyR"
             },
             {
                 "type": "builtin",
@@ -129,11 +145,11 @@
                 "name": "bassex",
                 "control": {
                     "bypass": 0,
-                    "amt": 0.35,
-                    "saturation": 1.5,
+                    "amt": 1.5,
+                    "saturation": 1.875,
                     "ceil": 200.0,
                     "floor": 20.0,
-                    "fc_out": 40.0
+                    "fc_out": 250.0
                 }
             },
             {
@@ -158,8 +174,8 @@
             }
         ],
         "links": [
-            {"output": "convS1L:Out", "input": "bassex:in_l"},
-            {"output": "convS1R:Out", "input": "bassex:in_r"},
+            {"output": "copyL:Out", "input": "bassex:in_l"},
+            {"output": "copyR:Out", "input": "bassex:in_r"},
             {"output": "bassex:out_l", "input": "compressor:in_l"},
             {"output": "bassex:out_r", "input": "compressor:in_r"},
             {"output": "compressor:out_l", "input": "convLT:In"},
@@ -172,8 +188,8 @@
             {"output": "convRW:Out", "input": "copyRW2:In"},
         ],
         "inputs": [
-            "convS1L:In",
-            "convS1R:In"
+            "copyL:In",
+            "copyR:In"
         ],
         "outputs": [
             "copyLW:Out",
