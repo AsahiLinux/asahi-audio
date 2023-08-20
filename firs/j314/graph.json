@@ -5,6 +5,39 @@
         "nodes": [
             {
                 "type": "lv2",
+                "plugin": "https://chadmed.au/bankstown",
+                "name": "bassex",
+                "control": {
+                    "bypass": 0,
+                    "amt": 1,
+                    "saturation": 1.75,
+                    "ceil": 200.0,
+                    "floor": 20.0,
+                    "fc_out": 20.0,
+                }
+            },
+            {
+                "type": "lv2",
+                "plugin": "http://lsp-plug.in/plugins/lv2/loud_comp_mono",
+                "name": "ell",
+                "control": {
+                    "enabled": 1,
+                    "input": 1.0,
+                    "fft": 4
+                }
+            },
+            {
+                "type": "lv2",
+                "plugin": "http://lsp-plug.in/plugins/lv2/loud_comp_mono",
+                "name": "elr",
+                "control": {
+                    "enabled": 1,
+                    "input": 1.0,
+                    "fft": 4
+                }
+            },
+            {
+                "type": "lv2",
                 "plugin": "http://lsp-plug.in/plugins/lv2/mb_compressor_stereo",
                 "name": "compressor",
                 "control": {
@@ -15,72 +48,41 @@
                     "ce_0": 1,
                     "sla_0": 20.0,
                     "scr_0": 10.0,
-                    "al_0": 0.25,
-                    "at_0": 5.85,
-                    "rrl_0": 0.600,
-                    "rt_0": 340.0,
-                    "cr_0": 3.5,
+                    "al_0": 0.2,
+                    "at_0": 2.35,
+                    "rt_0": 100.0,
+                    "cr_0": 1.65,
                     "kn_0": 0.06310,
                     "cbe_1": 1,
-                    "sf_1": 420.0,
+                    "sf_1": 200.0,
                     "ce_1": 1,
                     "sla_1": 20.0,
                     "scr_1": 10.0,
-                    "al_1": 0.165,
-                    "at_1": 5.85,
-                    "rrl_1": 0.75,
-                    "rt_1": 340.0,
-                    "cr_1": 4.5,
+                    "al_1": 0.62,
+                    "at_1": 2.35,
+                    "rt_1": 100.0,
+                    "cr_1": 6.375,
                     "kn_1": 0.06310,
+                    "cbe_2": 1,
+                    "sf_2": 1000.0,
+                    "ce_2": 0,
                     "cbe_6": 1,
                     "sf_6": 2060.0,
-                    "ce_6": 1,
+                    "ce_6": 0,
                     "sla_6": 20.0,
                     "scr_6": 10.0,
                     "al_6": 0.65,
                     "at_6": 5.85,
                     "rrl_6": 0.185,
                     "rt_6": 340.0,
-                    "cr_6": 1.175,
+                    "cr_6": 1.35,
                     "kn_6": 0.06310,
-                }
-            },
-            {
-                "type": "builtin",
-                "label": "copy",
-                "name": "copyL"
-            },
-            {
-                "type": "builtin",
-                "label": "copy",
-                "name": "copyR"
-            },
-            {
-                "type": "builtin",
-                "label": "convolver",
-                "name": "convS1L",
-                "config": {
-                    "filename": [
-                        "/usr/share/asahi-audio/j314/s1-441.wav",
-                        "/usr/share/asahi-audio/j314/s1-48.wav",
-                        "/usr/share/asahi-audio/j314/s1-96.wav",
-                        "/usr/share/asahi-audio/j314/s1-192.wav"
-                    ],
-                    "channel": 0
-                }
-            },
-            {
-                "type": "builtin",
-                "label": "convolver",
-                "name": "convS1R",
-                "config": {
-                    "filename": [
-                        "/usr/share/asahi-audio/j314/s1-441.wav",
-                        "/usr/share/asahi-audio/j314/s1-48.wav",
-                        "/usr/share/asahi-audio/j314/s1-96.wav",
-                        "/usr/share/asahi-audio/j314/s1-192.wav"
-                    ],
-                    "channel": 0
+                    "ce_3": 0,
+                    "cbe_3": 0,
+                    "ce_4": 0,
+                    "cbe_4": 0,
+                    "ce_5": 0,
+                    "cbe_5": 0
                 }
             },
             {
@@ -122,7 +124,8 @@
                         "/usr/share/asahi-audio/j314/woofers-96.wav",
                         "/usr/share/asahi-audio/j314/woofers-192.wav"
                     ],
-                    "channel": 0
+                    "channel": 0,
+                    "gain": 1.25
                 }
             },
             {
@@ -136,20 +139,8 @@
                         "/usr/share/asahi-audio/j314/woofers-96.wav",
                         "/usr/share/asahi-audio/j314/woofers-192.wav"
                     ],
-                    "channel": 0
-                }
-            },
-            {
-                "type": "lv2",
-                "plugin": "https://chadmed.au/bankstown",
-                "name": "bassex",
-                "control": {
-                    "bypass": 0,
-                    "amt": 1.5,
-                    "saturation": 1.875,
-                    "ceil": 200.0,
-                    "floor": 20.0,
-                    "fc_out": 250.0
+                    "channel": 0,
+                    "gain": 1.25
                 }
             },
             {
@@ -171,13 +162,13 @@
                 "type": "builtin",
                 "label": "copy",
                 "name": "copyRW2"
-            }
+            },
         ],
         "links": [
-            {"output": "copyL:Out", "input": "bassex:in_l"},
-            {"output": "copyR:Out", "input": "bassex:in_r"},
-            {"output": "bassex:out_l", "input": "compressor:in_l"},
-            {"output": "bassex:out_r", "input": "compressor:in_r"},
+            {"output": "bassex:out_l", "input": "ell:in"},
+            {"output": "bassex:out_r", "input": "elr:in"},
+            {"output": "ell:out", "input": "compressor:in_l"},
+            {"output": "elr:out", "input": "compressor:in_r"},
             {"output": "compressor:out_l", "input": "convLT:In"},
             {"output": "compressor:out_r", "input": "convRT:In"},
             {"output": "compressor:out_l", "input": "convLW:In"},
@@ -188,8 +179,8 @@
             {"output": "convRW:Out", "input": "copyRW2:In"},
         ],
         "inputs": [
-            "copyL:In",
-            "copyR:In"
+            "bassex:in_l",
+            "bassex:in_r"
         ],
         "outputs": [
             "copyLW:Out",
@@ -204,9 +195,16 @@
         "node.name": "audio_effect.j31x-convolver",
         "media.class": "Audio/Sink",
         "audio.channels": "2",
-        "audio.position": ["FL", "FR"]
+        "audio.position": ["FL", "FR"],
+        "device.api": "dsp",
+        "node.virtual": "true",
+        "filter.volume-controls": ["ell:volume", "elr:volume"],
+        "filter.volume-0": -38.5,
+        "filter.volume-1": 0.0,
+        "filter.volume-10": 7.0
     },
     "playback.props": {
+        "node.name": "effect_output.j31x-convolver",
         "target.object": "alsa_output.platform-sound.pro-output-1",
         "node.passive": "true",
         "audio.channels": "6",
