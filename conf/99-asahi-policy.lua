@@ -2,6 +2,24 @@
 -- Wireplumber DSP configuration for Apple Silicon Macs
 -- Copyright (C) 2023 The Asahi Linux Contributors
 
+
+-- J415 (MacBook Pro 14", M1 Pro/Max, 2021)
+j415 = {
+  matches = {
+    {
+      { "media.class", "matches", "*/Sink" },
+      { "node.name", "=", "alsa_output.platform-sound.pro-output-1" }
+    }
+  },
+  device_matches = {
+    {
+      { "device.nick", "=", "MacBook Air J415" }
+    },
+  },
+  filter_chain = '/usr/share/asahi-audio/j415/graph.json'
+}
+table.insert(dsp_policy.policy.rules, j415)
+
 -- J314 (MacBook Pro 14", M1 Pro/Max, 2021)
 j314 = {
   matches = {

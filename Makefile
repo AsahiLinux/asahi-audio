@@ -20,6 +20,10 @@ j314: core
 	install -dDm0755 $(DESTDIR)/$(PREFIX)/asahi-audio/j314/
 	install -pm0644 -t $(DESTDIR)/$(PREFIX)/asahi-audio/j314/ $(wildcard firs/j314/*)
 
+j415: core
+	install -dDm0755 $(DESTDIR)/$(PREFIX)/asahi-audio/j415/
+	install -pm0644 -t $(DESTDIR)/$(PREFIX)/asahi-audio/j415/ $(wildcard firs/j415/*)
+
 j316: core
 	install -dDm0755 $(DESTDIR)/$(PREFIX)/asahi-audio/j316/
 	install -pm0644 -t $(DESTDIR)/$(PREFIX)/asahi-audio/j316/ $(wildcard firs/j316/*)
@@ -28,7 +32,7 @@ mini: core
 	install -dDm0755 $(DESTDIR)/$(PREFIX)/asahi-audio/mini/
 	install -pm0644 -t $(DESTDIR)/$(PREFIX)/asahi-audio/mini/ $(wildcard firs/mini/*)
 
-install: core j314 j316 mini
+install: core j314 j316 mini j415
 
 uninstall:
 	rm -f $(DESTDIR)/$(WP_DIR)/policy.lua.d/99-asahi.lua
