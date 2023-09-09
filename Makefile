@@ -35,7 +35,7 @@ mini: core
 install: core j314 j316 mini j415
 
 uninstall:
-	rm -f $(DESTDIR)/$(WP_DIR)/policy.lua.d/99-asahi.lua
+	rm -f $(DESTDIR)/$(WP_DIR)/policy.lua.d/99-asahi-policy.lua
 	rm -f $(DESTDIR)/$(WP_DIR)/main.lua.d/99-asahi-monitor.lua
 	rm -rf $(DESTDIR)/$(PREFIX)/asahi-audio/
 	rm -rf $(DESTDIR)/$(PW_DIR)/pipewire.conf.d/99-asahi.conf
