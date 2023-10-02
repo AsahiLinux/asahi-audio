@@ -58,34 +58,6 @@
             {
                 "type": "builtin",
                 "label": "convolver",
-                "name": "convS1L",
-                "config": {
-                    "filename": [
-                        "/usr/share/asahi-audio/j316/s1-441.wav",
-                        "/usr/share/asahi-audio/j316/s1-48.wav",
-                        "/usr/share/asahi-audio/j316/s1-96.wav",
-                        "/usr/share/asahi-audio/j316/s1-192.wav"
-                    ],
-                    "channel": 0
-                }
-            },
-            {
-                "type": "builtin",
-                "label": "convolver",
-                "name": "convS1R",
-                "config": {
-                    "filename": [
-                        "/usr/share/asahi-audio/j316/s1-441.wav",
-                        "/usr/share/asahi-audio/j316/s1-48.wav",
-                        "/usr/share/asahi-audio/j316/s1-96.wav",
-                        "/usr/share/asahi-audio/j316/s1-192.wav"
-                    ],
-                    "channel": 0
-                }
-            },
-            {
-                "type": "builtin",
-                "label": "convolver",
                 "name": "convLT",
                 "config": {
                     "filename": [
@@ -173,8 +145,6 @@
             }
         ],
         "links": [
-            {"output": "convS1L:Out", "input": "bassex:in_l"},
-            {"output": "convS1R:Out", "input": "bassex:in_r"},
             {"output": "bassex:out_l", "input": "compressor:in_l"},
             {"output": "bassex:out_r", "input": "compressor:in_r"},
             {"output": "compressor:out_l", "input": "convLT:In"},
@@ -187,8 +157,8 @@
             {"output": "convRW:Out", "input": "copyRW2:In"},
         ],
         "inputs": [
-            "convS1L:In",
-            "convS1R:In"
+            "bassex:in_l",
+            "bassex:in_r"
         ],
         "outputs": [
             "copyLW:Out",
