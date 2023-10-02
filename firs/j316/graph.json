@@ -75,7 +75,7 @@
                 "name": "convRT",
                 "config": {
                     "filename": [
-                        "/usr/share/asahi-audio/j316/tweeters-441.wav",
+                        "/usr/share/asahi-audio/j316/tweeters-44.wav",
                         "/usr/share/asahi-audio/j316/tweeters-48.wav",
                         "/usr/share/asahi-audio/j316/tweeters-96.wav",
                         "/usr/share/asahi-audio/j316/tweeters-92.wav"
@@ -89,7 +89,7 @@
                 "name": "convLW",
                 "config": {
                     "filename": [
-                        "/usr/share/asahi-audio/j316/woofers-441.wav",
+                        "/usr/share/asahi-audio/j316/woofers-44.wav",
                         "/usr/share/asahi-audio/j316/woofers-48.wav",
                         "/usr/share/asahi-audio/j316/woofers-96.wav",
                         "/usr/share/asahi-audio/j316/woofers-192.wav"
@@ -103,7 +103,7 @@
                 "name": "convRW",
                 "config": {
                     "filename": [
-                        "/usr/share/asahi-audio/j316/woofers-441.wav",
+                        "/usr/share/asahi-audio/j316/woofers-44.wav",
                         "/usr/share/asahi-audio/j316/woofers-48.wav",
                         "/usr/share/asahi-audio/j316/woofers-96.wav",
                         "/usr/share/asahi-audio/j316/woofers-192.wav"
