@@ -11,11 +11,6 @@ j415 = {
       { "node.name", "=", "alsa_output.platform-sound.HiFi__hw_J415_1__sink" }
     }
   },
-  device_matches = {
-    {
-      { "device.nick", "=", "MacBook Air J415" }
-    },
-  },
   filter_chain = '/usr/share/asahi-audio/j415/graph.json'
 }
 table.insert(dsp_policy.policy.rules, j415)
@@ -25,13 +20,8 @@ j314 = {
   matches = {
     {
       { "media.class", "matches", "*/Sink" },
-      { "node.name", "=", "alsa_output.platform-sound.pro-output-1" }
+      { "node.name", "=", "alsa_output.platform-sound.HiFi__hw_J314_1__sink" }
     }
-  },
-  device_matches = {
-    {
-      { "device.nick", "=", "MacBook Pro J314" }
-    },
   },
   filter_chain = '/usr/share/asahi-audio/j314/graph.json'
 }
@@ -43,12 +33,7 @@ j316 = {
   matches = {
     {
       { "media.class", "matches", "*/Sink" },
-      { "node.name", "=", "alsa_output.platform-sound.pro-output-1" }
-    }
-  },
-  device_matches = {
-    {
-      { "device.nick", "=", "MacBook Pro J316" }
+      { "node.name", "=", "alsa_output.platform-sound.HiFi__hw_J316_1__sink" }
     }
   },
   filter_chain = '/usr/share/asahi-audio/j316/graph.json'
@@ -61,12 +46,7 @@ mac_mini = {
   matches = {
     {
       { "media.class", "matches", "*/Sink" },
-      { "node.name", "=", "alsa_output.platform-sound.pro-output-1" }
-    }
-  },
-  device_matches = {
-    {
-      { "device.nick", "matches", "Mac mini J*" }
+      { "node.name", "=", "alsa_output.platform-sound.HiFi__hw_J293_1__sink" }
     }
   },
   filter_chain = '/usr/share/asahi-audio/mini/graph.json'
