@@ -3,12 +3,12 @@
 -- Copyright (C) 2023 The Asahi Linux Contributors
 
 
--- J415 (MacBook Pro 14", M1 Pro/Max, 2021)
+-- J415 (MacBook Air 15", M2, 2023)
 j415 = {
   matches = {
     {
       { "media.class", "matches", "*/Sink" },
-      { "node.name", "=", "alsa_output.platform-sound.pro-output-1" }
+      { "node.name", "=", "alsa_output.platform-sound.HiFi__hw_J415_1__sink" }
     }
   },
   device_matches = {
