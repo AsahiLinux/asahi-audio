@@ -9,8 +9,10 @@
                 "name": "bassex",
                 "control": {
                     "bypass": 0,
-                    "amt": 1.15,
-                    "saturation": 1.35,
+                    "amt": 1.25,
+                    "sat_second": 1.15,
+                    "sat_third": 1.35,
+                    "blend": 0.65,
                     "ceil": 200.0,
                     "floor": 20.0,
                     "fc_out": 20.0,
@@ -97,7 +99,7 @@
                         "/usr/share/asahi-audio/j415/tweeters-192.wav"
                     ],
                     "channel": 0,
-                    "gain": 1.2
+                    "gain": 1.0
                 }
             },
             {
@@ -112,7 +114,7 @@
                         "/usr/share/asahi-audio/j415/tweeters-92.wav"
                     ],
                     "channel": 0,
-                    "gain": 1.2
+                    "gain": 1.0
                 }
             },
             {
@@ -127,7 +129,7 @@
                         "/usr/share/asahi-audio/j415/woofers-192.wav"
                     ],
                     "channel": 0,
-                    "gain": 1.55
+                    "gain": 1.6
                 }
             },
             {
@@ -142,7 +144,7 @@
                         "/usr/share/asahi-audio/j415/woofers-192.wav"
                     ],
                     "channel": 0,
-                    "gain": 1.55
+                    "gain": 1.6
                 }
             },
             {
