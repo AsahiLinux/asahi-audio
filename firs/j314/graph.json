@@ -189,6 +189,18 @@
             "convRT:Out",
             "copyLW2:Out",
             "copyRW2:Out"
+        ],
+        "capture.volumes": [
+            {
+                "control": "ell:volume",
+                "min": 0.0,
+                "max": 1.0
+            },
+            {
+                "control": "elr:volume",
+                "min": 0.0,
+                "max": 1.0
+            }
         ]
     },
     "capture.props": {
@@ -198,10 +210,6 @@
         "audio.position": ["FL", "FR"],
         "device.api": "dsp",
         "node.virtual": "true",
-        "filter.volume-controls": ["ell:volume", "elr:volume"],
-        "filter.volume-0": -38.5,
-        "filter.volume-1": 0.0,
-        "filter.volume-10": 7.0
     },
     "playback.props": {
         "target.object": "alsa_output.platform-sound.HiFi__hw_J314_1__sink",

@@ -193,6 +193,18 @@
             "convRT:Out",
             "copyLW2:Out",
             "copyRW2:Out"
+        ],
+        "capture.volumes": [
+            {
+                "control": "ell:volume",
+                "min": 0.0,
+                "max": 1.0
+            },
+            {
+                "control": "elr:volume",
+                "min": 0.0,
+                "max": 1.0
+            }
         ]
     },
     "capture.props": {
@@ -202,10 +214,6 @@
         "audio.position": ["FL", "FR"],
         "device.api": "dsp",
         "node.virtual": "true",
-        "filter.volume-controls": ["ell:volume", "elr:volume"],
-        "filter.volume-0": -46.0,
-        "filter.volume-1": 0.0,
-        "filter.volume-10": 7.0
     },
     "playback.props": {
         "node.name": "effect_output.j415-convolver",
