@@ -214,7 +214,7 @@
         "audio.channels": "2",
         "audio.position": ["FL", "FR"],
         "device.api": "dsp",
-        "node.virtual": "true",
+        "node.virtual": "false",
     },
     "playback.props": {
         "node.name": "effect_output.j415-convolver",

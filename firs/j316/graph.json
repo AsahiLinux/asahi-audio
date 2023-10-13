@@ -173,7 +173,8 @@
         "node.name": "audio_effect.j31x-convolver",
         "media.class": "Audio/Sink",
         "audio.channels": "2",
-        "audio.position": ["FL", "FR"]
+        "audio.position": ["FL", "FR"],
+        "node.virtual": "false"
     },
     "playback.props": {
         "target.object": "alsa_output.platform-sound.HiFi__hw_J316_1__sink",

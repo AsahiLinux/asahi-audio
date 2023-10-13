@@ -42,7 +42,8 @@
         "node.name": "audio_effect.mini-convolver",
         "media.class": "Audio/Sink",
         "audio.channels": "2",
-        "audio.position": ["FL", "FR"]
+        "audio.position": ["FL", "FR"],
+        "node.virtual": "false"
     },
     "playback.props": {
         "node.target": "alsa_output.platform-sound.pro-output-1",
