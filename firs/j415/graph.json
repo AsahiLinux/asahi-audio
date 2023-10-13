@@ -196,13 +196,15 @@
         "capture.volumes": [
             {
                 "control": "ell:volume",
-                "min": 0.0,
-                "max": 1.0
+                "min": -42.5,
+                "max": 0.0,
+                "scale": "cubic"
             },
             {
                 "control": "elr:volume",
-                "min": 0.0,
-                "max": 1.0
+                "min": -42.5,
+                "max": 0.0,
+                "scale": "cubic"
             }
         ]
     },
