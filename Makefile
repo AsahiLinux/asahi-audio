@@ -7,10 +7,16 @@ PW_DIR ?= /etc/pipewire
 
 all: aliases
 
-aliases: aliases-j274
+aliases: aliases-j274 aliases-j314 aliases-j316
 
 aliases-j274:
 	make -f $$PWD/Makefile -C firs/j274 graph-j473.json graph-j474.json
+
+aliases-j314:
+	make -f $$PWD/Makefile -C firs/j314 graph-j414.json
+
+aliases-j316:
+	make -f $$PWD/Makefile -C firs/j316 graph-j416.json
 
 graph-%.json: graph.json
 	sed -E "s/([^/][jJ])$$(basename "$$PWD" | tr -d j)/\1$(patsubst graph-j%.json,%,$@)/g" $< >$@

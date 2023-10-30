@@ -26,7 +26,17 @@ j314 = {
   filter_chain = '/usr/share/asahi-audio/j314/graph.json'
 }
 table.insert(dsp_policy.policy.rules, j314)
-
+-- J414 (MacBook Pro 14", M2 Pro/Max, 2023)
+j414 = {
+  matches = {
+    {
+      { "media.class", "matches", "*/Sink" },
+      { "node.name", "=", "alsa_output.platform-sound.HiFi__hw_J414_1__sink" }
+    }
+  },
+  filter_chain = '/usr/share/asahi-audio/j314/graph-j414.json'
+}
+table.insert(dsp_policy.policy.rules, j414)
 
 -- J316 (MacBook Pro 16", M1 Pro/Max, 2021)
 j316 = {
@@ -39,6 +49,17 @@ j316 = {
   filter_chain = '/usr/share/asahi-audio/j316/graph.json'
 }
 table.insert(dsp_policy.policy.rules, j316)
+-- J416 (MacBook Pro 16", M2 Pro/Max, 2023)
+j416 = {
+  matches = {
+    {
+      { "media.class", "matches", "*/Sink" },
+      { "node.name", "=", "alsa_output.platform-sound.HiFi__hw_J416_1__sink" }
+    }
+  },
+  filter_chain = '/usr/share/asahi-audio/j316/graph-j416.json'
+}
+table.insert(dsp_policy.policy.rules, j416)
 
 -- Mac minis (all have the same speaker)
 j274 = {
