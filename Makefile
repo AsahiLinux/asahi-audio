@@ -29,7 +29,6 @@ core:
 	install -dDm0755 $(DESTDIR)/$(WP_DIR)/main.lua.d/
 	install -dDm0755 $(DESTDIR)/$(PW_DIR)/pipewire.conf.d/
 	install -pm0644 conf/99-asahi-policy.lua $(DESTDIR)/$(WP_DIR)/policy.lua.d/99-asahi-policy.lua
-	install -pm0644 conf/99-asahi-monitor.lua $(DESTDIR)/$(WP_DIR)/main.lua.d/99-asahi-monitor.lua
 	install -pm0644 conf/99-asahi.conf $(DESTDIR)/$(PW_DIR)/pipewire.conf.d/99-asahi.conf
 	install -dDm0755 $(DESTDIR)/$(PREFIX)/asahi-audio/
 
@@ -42,6 +41,5 @@ install: aliases core j274 j313 j314 j316 j415
 
 uninstall:
 	rm -f $(DESTDIR)/$(WP_DIR)/policy.lua.d/99-asahi-policy.lua
-	rm -f $(DESTDIR)/$(WP_DIR)/main.lua.d/99-asahi-monitor.lua
 	rm -rf $(DESTDIR)/$(PREFIX)/asahi-audio/
 	rm -rf $(DESTDIR)/$(PW_DIR)/pipewire.conf.d/99-asahi.conf
