@@ -12,19 +12,21 @@ to prevent intrepid users from damaging their machines. Please do not ask for
 help with installing this, or enabling speaker support on your machine. An
 announcement will be made when speaker support is ready for wider release.
 
-### Supported Devices
-* MacBook Pro (14-inch, 2021)
-* MacBook Pro (16-inch, 2021) (_uses same EQ as J314, probably sounds bad!_)
-* All Mac mini models
+### Currently Supported Devices
+* MacBook Air (13-inch, M1, 2020)
+* MacBook Air (15-inch, M2, 2023)
+* MacBook Pro (14-inch, all 2021/2022 models)
+* MacBook Pro (16-inch, all 2021/2022 models) (_currently uses same EQ as 14"_)
+* Mac mini (all 2020-2023 Apple Silicon models)
 
 ### Dependencies
-* PipeWire
-* pipewire-pulse
-* WirePlumber with eleven secret herbs and spices
-* LSP Plugins (you _must_ have the LV2 set of plugins installed)
-* The latest linux-asahi kernel
 * speakersafetyd
-* Audio enabled in your devicetree (read the dislaimer)
+* linux-asahi 6.5-17 or above
+* PipeWire 0.3.81 or above
+* WirePlumber 0.4.14 or above
+* Bankstown 1.0 or above
+* LSP Plugins (only the LV2 set of plugins are used)
+
 
 ### Why this is necessary
 Modern microspeakers aren't any better than microspeakers from
