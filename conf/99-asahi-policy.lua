@@ -40,19 +40,37 @@ j316 = {
 }
 table.insert(dsp_policy.policy.rules, j316)
 
-
 -- Mac minis (all have the same speaker)
-mac_mini = {
+j274 = {
   matches = {
     {
       { "media.class", "matches", "*/Sink" },
-      { "node.name", "=", "alsa_output.platform-sound.HiFi__hw_J293_1__sink" }
+      { "node.name", "=", "alsa_output.platform-sound.HiFi__hw_J274_1__sink" }
     }
   },
-  filter_chain = '/usr/share/asahi-audio/mini/graph.json'
+  filter_chain = '/usr/share/asahi-audio/j274/graph.json'
 }
-table.insert(dsp_policy.policy.rules, mac_mini)
-
+table.insert(dsp_policy.policy.rules, j274)
+j473 = {
+  matches = {
+    {
+      { "media.class", "matches", "*/Sink" },
+      { "node.name", "=", "alsa_output.platform-sound.HiFi__hw_J473_1__sink" }
+    }
+  },
+  filter_chain = '/usr/share/asahi-audio/j274/graph-j473.json'
+}
+table.insert(dsp_policy.policy.rules, j473)
+j474 = {
+  matches = {
+    {
+      { "media.class", "matches", "*/Sink" },
+      { "node.name", "=", "alsa_output.platform-sound.HiFi__hw_J474_1__sink" }
+    }
+  },
+  filter_chain = '/usr/share/asahi-audio/j274/graph-j474.json'
+}
+table.insert(dsp_policy.policy.rules, j474)
 
 -- Hide the raw speaker output from the rest of userspace (DO NOT ENABLE YET)
 -- hide_hw = {

@@ -5,7 +5,18 @@ PREFIX ?= /usr/share
 WP_DIR ?= /etc/wireplumber
 PW_DIR ?= /etc/pipewire
 
-default:
+all: aliases
+
+aliases: aliases-j274
+
+aliases-j274:
+	make -f $$PWD/Makefile -C firs/j274 graph-j473.json graph-j474.json
+
+graph-%.json: graph.json
+	sed -E "s/([^/][jJ])$$(basename "$$PWD" | tr -d j)/\1$(patsubst graph-j%.json,%,$@)/g" $< >$@
+
+clean:
+	rm -f firs/*/graph-*.json
 
 core:
 	install -dDm0755 $(DESTDIR)/$(WP_DIR)/policy.lua.d/
@@ -16,23 +27,12 @@ core:
 	install -pm0644 conf/99-asahi.conf $(DESTDIR)/$(PW_DIR)/pipewire.conf.d/99-asahi.conf
 	install -dDm0755 $(DESTDIR)/$(PREFIX)/asahi-audio/
 
-j314: core
-	install -dDm0755 $(DESTDIR)/$(PREFIX)/asahi-audio/j314/
-	install -pm0644 -t $(DESTDIR)/$(PREFIX)/asahi-audio/j314/ $(wildcard firs/j314/*)
+j%: core
+	install -dDm0755 $(DESTDIR)/$(PREFIX)/asahi-audio/$@/
+	install -pm0644 -t $(DESTDIR)/$(PREFIX)/asahi-audio/$@/ $(wildcard firs/$@/*)
 
-j415: core
-	install -dDm0755 $(DESTDIR)/$(PREFIX)/asahi-audio/j415/
-	install -pm0644 -t $(DESTDIR)/$(PREFIX)/asahi-audio/j415/ $(wildcard firs/j415/*)
 
-j316: core
-	install -dDm0755 $(DESTDIR)/$(PREFIX)/asahi-audio/j316/
-	install -pm0644 -t $(DESTDIR)/$(PREFIX)/asahi-audio/j316/ $(wildcard firs/j316/*)
-
-mini: core
-	install -dDm0755 $(DESTDIR)/$(PREFIX)/asahi-audio/mini/
-	install -pm0644 -t $(DESTDIR)/$(PREFIX)/asahi-audio/mini/ $(wildcard firs/mini/*)
-
-install: core j314 j316 mini j415
+install: aliases core j274 j314 j316 j415
 
 uninstall:
 	rm -f $(DESTDIR)/$(WP_DIR)/policy.lua.d/99-asahi-policy.lua
