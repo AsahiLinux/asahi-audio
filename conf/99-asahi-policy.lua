@@ -103,16 +103,3 @@ j474 = {
   filter_chain = '/usr/share/asahi-audio/j274/graph-j474.json'
 }
 table.insert(dsp_policy.policy.rules, j474)
-
--- Hide the raw speaker output from the rest of userspace (DO NOT ENABLE YET)
--- hide_hw = {
---   matches = {
---     {
---       { "node.name", "=", "alsa_output.platform-sound.pro-output-1" }
---     }
---   },
---   properties = {
---     hide = true
---   }
--- }
--- table.insert(dsp_policy.policy.rules, hide_hw)
