@@ -1,9 +1,8 @@
 # SPDX-License-Identifier: MIT
 # Copyright (C) 2023 The Asahi Linux Contributors
 
-PREFIX ?= /usr/share
-WP_DIR ?= /etc/wireplumber
-PW_DIR ?= /etc/pipewire
+PREFIX ?= /usr/
+DATA_DIR ?= $(PREFIX)/share/
 
 all: aliases
 
@@ -25,21 +24,21 @@ clean:
 	rm -f firs/*/graph-*.json
 
 core:
-	install -dDm0755 $(DESTDIR)/$(WP_DIR)/policy.lua.d/
-	install -dDm0755 $(DESTDIR)/$(WP_DIR)/main.lua.d/
-	install -dDm0755 $(DESTDIR)/$(PW_DIR)/pipewire.conf.d/
-	install -pm0644 conf/99-asahi-policy.lua $(DESTDIR)/$(WP_DIR)/policy.lua.d/99-asahi-policy.lua
-	install -pm0644 conf/99-asahi.conf $(DESTDIR)/$(PW_DIR)/pipewire.conf.d/99-asahi.conf
-	install -dDm0755 $(DESTDIR)/$(PREFIX)/asahi-audio/
+	install -dDm0755 $(DESTDIR)/$(DATA_DIR)/wireplumber/policy.lua.d/
+	install -dDm0755 $(DESTDIR)/$(DATA_DIR)/wireplumber/main.lua.d/
+	install -dDm0755 $(DESTDIR)/$(DATA_DIR)/pipewire/pipewire.conf.d/
+	install -pm0644 conf/99-asahi-policy.lua $(DESTDIR)/$(DATA_DIR)/wireplumber/policy.lua.d/99-asahi-policy.lua
+	install -pm0644 conf/99-asahi.conf $(DESTDIR)/$(DATA_DIR)/pipewire/pipewire.conf.d/99-asahi.conf
+	install -dDm0755 $(DESTDIR)/$(DATA_DIR)/asahi-audio/
 
 j%: core
-	install -dDm0755 $(DESTDIR)/$(PREFIX)/asahi-audio/$@/
-	install -pm0644 -t $(DESTDIR)/$(PREFIX)/asahi-audio/$@/ $(wildcard firs/$@/*)
+	install -dDm0755 $(DESTDIR)/$(DATA_DIR)/asahi-audio/$@/
+	install -pm0644 -t $(DESTDIR)/$(DATA_DIR)/asahi-audio/$@/ $(wildcard firs/$@/*)
 
 
 install: aliases core j274 j313 j314 j316 j415
 
 uninstall:
-	rm -f $(DESTDIR)/$(WP_DIR)/policy.lua.d/99-asahi-policy.lua
-	rm -rf $(DESTDIR)/$(PREFIX)/asahi-audio/
-	rm -rf $(DESTDIR)/$(PW_DIR)/pipewire.conf.d/99-asahi.conf
+	rm -f $(DESTDIR)/$(DATA_DIR)/wireplumber/policy.lua.d/99-asahi-policy.lua
+	rm -rf $(DESTDIR)/$(DATA_DIR)/asahi-audio/
+	rm -rf $(DESTDIR)/$(DATA_DIR)/pipewire/pipewire.conf.d/99-asahi.conf
