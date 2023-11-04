@@ -1,0 +1,200 @@
+{
+    "node.description": "MacBook Pro J293 Speakers",
+    "media.name": "MacBook Pro J293 Speakers",
+    "filter.graph": {
+        "nodes": [
+            {
+                "type": "lv2",
+                "plugin": "https://chadmed.au/bankstown",
+                "name": "bassex",
+                "control": {
+                    "bypass": 0,
+                    "amt": 1.45,
+                    "sat_second": 1.3,
+                    "sat_third": 2.5,
+                    "blend": 0.65,
+                    "ceil": 200.0,
+                    "floor": 20.0,
+                }
+            },
+            {
+                "type": "lv2",
+                "plugin": "http://lsp-plug.in/plugins/lv2/loud_comp_mono",
+                "name": "ell",
+                "control": {
+                    "enabled": 1,
+                    "input": 1.0,
+                    "fft": 4
+                }
+            },
+            {
+                "type": "lv2",
+                "plugin": "http://lsp-plug.in/plugins/lv2/loud_comp_mono",
+                "name": "elr",
+                "control": {
+                    "enabled": 1,
+                    "input": 1.0,
+                    "fft": 4
+                }
+            },
+            {
+                "type": "lv2",
+                "plugin": "http://lsp-plug.in/plugins/lv2/mb_compressor_stereo",
+                "name": "compressor",
+                "control": {
+                    "g_in": 1,
+                    "g_out": 1,
+                    "g_dry": 0,
+                    "g_wet": 1,
+                    "ce_0": 1,
+                    "sla_0": 20.0,
+                    "scr_0": 10.0,
+                    "al_0": 0.275,
+                    "at_0": 2.35,
+                    "rt_0": 100.0,
+                    "cr_0": 2.15,
+                    "kn_0": 0.06310,
+                    "cbe_1": 1,
+                    "sf_1": 200.0,
+                    "ce_1": 1,
+                    "sla_1": 20.0,
+                    "scr_1": 10.0,
+                    "al_1": 0.675,
+                    "at_1": 1.95,
+                    "rt_1": 100.0,
+                    "cr_1": 8.5,
+                    "kn_1": 0.06310,
+                    "cbe_2": 1,
+                    "sf_2": 1000.0,
+                    "ce_2": 0,
+                    "cbe_6": 1,
+                    "sf_6": 3800.0,
+                    "ce_6": 0,
+                    "sla_6": 20.0,
+                    "scr_6": 10.0,
+                    "al_6": 0.55,
+                    "at_6": 5.85,
+                    "rrl_6": 0.185,
+                    "rt_6": 340.0,
+                    "cr_6": 2.15,
+                    "kn_6": 0.06310,
+                    "ce_3": 0,
+                    "cbe_3": 0,
+                    "ce_4": 0,
+                    "cbe_4": 0,
+                    "ce_5": 0,
+                    "cbe_5": 0
+                }
+            },
+            {
+                "type": "builtin",
+                "label": "convolver",
+                "name": "convFL",
+                "config": {
+                    "filename": [
+                        "/usr/share/asahi-audio/j293/front-44.wav",
+                        "/usr/share/asahi-audio/j293/front-48.wav",
+                        "/usr/share/asahi-audio/j293/front-96.wav",
+                        "/usr/share/asahi-audio/j293/front-192.wav"
+                    ],
+                    "channel": 0,
+                    "gain": 1.3
+                }
+            },
+            {
+                "type": "builtin",
+                "label": "convolver",
+                "name": "convFR",
+                "config": {
+                    "filename": [
+                        "/usr/share/asahi-audio/j293/front-44.wav",
+                        "/usr/share/asahi-audio/j293/front-48.wav",
+                        "/usr/share/asahi-audio/j293/front-96.wav",
+                        "/usr/share/asahi-audio/j293/front-192.wav"
+                    ],
+                    "channel": 0,
+                    "gain": 1.3
+                }
+            },
+            {
+                "type": "builtin",
+                "label": "convolver",
+                "name": "convRL",
+                "config": {
+                    "filename": [
+                        "/usr/share/asahi-audio/j293/rear-44.wav",
+                        "/usr/share/asahi-audio/j293/rear-48.wav",
+                        "/usr/share/asahi-audio/j293/rear-96.wav",
+                        "/usr/share/asahi-audio/j293/rear-192.wav"
+                    ],
+                    "channel": 0,
+                    "gain": 1.3
+                }
+            },
+            {
+                "type": "builtin",
+                "label": "convolver",
+                "name": "convRR",
+                "config": {
+                    "filename": [
+                        "/usr/share/asahi-audio/j293/rear-44.wav",
+                        "/usr/share/asahi-audio/j293/rear-48.wav",
+                        "/usr/share/asahi-audio/j293/rear-96.wav",
+                        "/usr/share/asahi-audio/j293/rear-192.wav"
+                    ],
+                    "channel": 0,
+                    "gain": 1.3
+                }
+            },
+        ],
+        "links": [
+            {"output": "bassex:out_l", "input": "ell:in"},
+            {"output": "bassex:out_r", "input": "elr:in"},
+            {"output": "ell:out", "input": "compressor:in_l"},
+            {"output": "elr:out", "input": "compressor:in_r"},
+            {"output": "compressor:out_l", "input": "convFL:In"},
+            {"output": "compressor:out_r", "input": "convFR:In"},
+            {"output": "compressor:out_l", "input": "convRL:In"},
+            {"output": "compressor:out_r", "input": "convRR:In"},
+        ],
+        "inputs": [
+            "bassex:in_l",
+            "bassex:in_r"
+        ],
+        "outputs": [
+            "convFL:Out",
+            "convFR:Out",
+            "convRL:Out",
+            "convRR:Out"
+        ],
+        "capture.volumes": [
+            {
+                "control": "ell:volume",
+                "min": -42.5,
+                "max": 0.0,
+                "scale": "cubic"
+            },
+            {
+                "control": "elr:volume",
+                "min": -42.5,
+                "max": 0.0,
+                "scale": "cubic"
+            }
+        ]
+    },
+    "capture.props": {
+        "node.name": "audio_effect.j293-convolver",
+        "media.class": "Audio/Sink",
+        "audio.channels": "2",
+        "audio.position": ["FL", "FR"],
+        "device.api": "dsp",
+        "node.virtual": "false",
+    },
+    "playback.props": {
+        "node.name": "effect_output.j293-convolver",
+        "target.object": "alsa_output.platform-sound.HiFi__hw_J293_1__sink",
+        "node.passive": "true",
+        "audio.channels": "4",
+        "audio.position": ["FL", "FR", "RL", "RR"]
+    }
+}

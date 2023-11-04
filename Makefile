@@ -6,10 +6,13 @@ DATA_DIR ?= $(PREFIX)/share/
 
 all: aliases
 
-aliases: aliases-j274 aliases-j314 aliases-j316
+aliases: aliases-j274 aliases-j293 aliases-j314 aliases-j316
 
 aliases-j274:
 	make -f $$PWD/Makefile -C firs/j274 graph-j473.json graph-j474.json
+
+aliases-j293:
+	make -f $$PWD/Makefile -C firs/j293 graph-j493.json
 
 aliases-j314:
 	make -f $$PWD/Makefile -C firs/j314 graph-j414.json
@@ -36,7 +39,7 @@ j%: core
 	install -pm0644 -t $(DESTDIR)/$(DATA_DIR)/asahi-audio/$@/ $(wildcard firs/$@/*)
 
 
-install: aliases core j274 j313 j314 j316 j415
+install: aliases core j274 j293 j313 j314 j316 j415
 
 uninstall:
 	rm -f $(DESTDIR)/$(DATA_DIR)/wireplumber/policy.lua.d/99-asahi-policy.lua

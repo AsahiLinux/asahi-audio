@@ -2,7 +2,30 @@
 -- Wireplumber DSP configuration for Apple Silicon Macs
 -- Copyright (C) 2023 The Asahi Linux Contributors
 
--- J313 (MacBook Air 13", M1, 2020)
+-- J293 (MacBook Pro 13", M1, 2020)
+j293 = {
+  matches = {
+    {
+      { "media.class", "matches", "*/Sink" },
+      { "node.name", "=", "alsa_output.platform-sound.HiFi__hw_J293_1__sink" }
+    }
+  },
+  filter_chain = '/usr/share/asahi-audio/j293/graph.json'
+}
+-- J493 (MacBook Pro 13", M2, 2022)
+table.insert(dsp_policy.policy.rules, j293)
+j493 = {
+  matches = {
+    {
+      { "media.class", "matches", "*/Sink" },
+      { "node.name", "=", "alsa_output.platform-sound.HiFi__hw_J493_1__sink" }
+    }
+  },
+  filter_chain = '/usr/share/asahi-audio/j293/graph-j493.json'
+}
+table.insert(dsp_policy.policy.rules, j493)
+
+--- J313 (MacBook Air 13", M1, 2020)
 j313 = {
   matches = {
     {
