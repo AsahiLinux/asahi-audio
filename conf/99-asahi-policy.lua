@@ -10,7 +10,8 @@ j293 = {
       { "node.name", "=", "alsa_output.platform-sound.HiFi__hw_J293_1__sink" }
     }
   },
-  filter_chain = '/usr/share/asahi-audio/j293/graph.json'
+  filter_chain = '/usr/share/asahi-audio/j293/graph.json',
+  hide_parent = true
 }
 -- J493 (MacBook Pro 13", M2, 2022)
 table.insert(dsp_policy.policy.rules, j293)
@@ -21,7 +22,8 @@ j493 = {
       { "node.name", "=", "alsa_output.platform-sound.HiFi__hw_J493_1__sink" }
     }
   },
-  filter_chain = '/usr/share/asahi-audio/j293/graph-j493.json'
+  filter_chain = '/usr/share/asahi-audio/j293/graph-j493.json',
+  hide_parent = true
 }
 table.insert(dsp_policy.policy.rules, j493)
 
@@ -33,7 +35,8 @@ j313 = {
       { "node.name", "=", "alsa_output.platform-sound.HiFi__hw_J313_1__sink" }
     }
   },
-  filter_chain = '/usr/share/asahi-audio/j313/graph.json'
+  filter_chain = '/usr/share/asahi-audio/j313/graph.json',
+  hide_parent = true
 }
 table.insert(dsp_policy.policy.rules, j313)
 
@@ -45,7 +48,8 @@ j415 = {
       { "node.name", "=", "alsa_output.platform-sound.HiFi__hw_J415_1__sink" }
     }
   },
-  filter_chain = '/usr/share/asahi-audio/j415/graph.json'
+  filter_chain = '/usr/share/asahi-audio/j415/graph.json',
+  hide_parent = true
 }
 table.insert(dsp_policy.policy.rules, j415)
 
@@ -57,7 +61,8 @@ j314 = {
       { "node.name", "=", "alsa_output.platform-sound.HiFi__hw_J314_1__sink" }
     }
   },
-  filter_chain = '/usr/share/asahi-audio/j314/graph.json'
+  filter_chain = '/usr/share/asahi-audio/j314/graph.json',
+  hide_parent = true
 }
 table.insert(dsp_policy.policy.rules, j314)
 -- J414 (MacBook Pro 14", M2 Pro/Max, 2023)
@@ -68,7 +73,8 @@ j414 = {
       { "node.name", "=", "alsa_output.platform-sound.HiFi__hw_J414_1__sink" }
     }
   },
-  filter_chain = '/usr/share/asahi-audio/j314/graph-j414.json'
+  filter_chain = '/usr/share/asahi-audio/j314/graph-j414.json',
+  hide_parent = true
 }
 table.insert(dsp_policy.policy.rules, j414)
 
@@ -80,7 +86,8 @@ j316 = {
       { "node.name", "=", "alsa_output.platform-sound.HiFi__hw_J316_1__sink" }
     }
   },
-  filter_chain = '/usr/share/asahi-audio/j316/graph.json'
+  filter_chain = '/usr/share/asahi-audio/j316/graph.json',
+  hide_parent = true
 }
 table.insert(dsp_policy.policy.rules, j316)
 -- J416 (MacBook Pro 16", M2 Pro/Max, 2023)
@@ -91,7 +98,8 @@ j416 = {
       { "node.name", "=", "alsa_output.platform-sound.HiFi__hw_J416_1__sink" }
     }
   },
-  filter_chain = '/usr/share/asahi-audio/j316/graph-j416.json'
+  filter_chain = '/usr/share/asahi-audio/j316/graph-j416.json',
+  hide_parent = true
 }
 table.insert(dsp_policy.policy.rules, j416)
 
@@ -103,7 +111,8 @@ j274 = {
       { "node.name", "=", "alsa_output.platform-sound.HiFi__hw_J274_1__sink" }
     }
   },
-  filter_chain = '/usr/share/asahi-audio/j274/graph.json'
+  filter_chain = '/usr/share/asahi-audio/j274/graph.json',
+  hide_parent = true
 }
 table.insert(dsp_policy.policy.rules, j274)
 j473 = {
@@ -113,7 +122,8 @@ j473 = {
       { "node.name", "=", "alsa_output.platform-sound.HiFi__hw_J473_1__sink" }
     }
   },
-  filter_chain = '/usr/share/asahi-audio/j274/graph-j473.json'
+  filter_chain = '/usr/share/asahi-audio/j274/graph-j473.json',
+  hide_parent = true
 }
 table.insert(dsp_policy.policy.rules, j473)
 j474 = {
@@ -123,6 +133,7 @@ j474 = {
       { "node.name", "=", "alsa_output.platform-sound.HiFi__hw_J474_1__sink" }
     }
   },
-  filter_chain = '/usr/share/asahi-audio/j274/graph-j474.json'
+  filter_chain = '/usr/share/asahi-audio/j274/graph-j474.json',
+  hide_parent = true
 }
 table.insert(dsp_policy.policy.rules, j474)
