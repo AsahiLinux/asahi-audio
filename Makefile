@@ -30,8 +30,11 @@ core:
 	install -dDm0755 $(DESTDIR)/$(DATA_DIR)/wireplumber/policy.lua.d/
 	install -dDm0755 $(DESTDIR)/$(DATA_DIR)/wireplumber/main.lua.d/
 	install -dDm0755 $(DESTDIR)/$(DATA_DIR)/pipewire/pipewire.conf.d/
+	install -dDm0755 $(DESTDIR)/$(DATA_DIR)/pipewire/pipewire-pulse.conf.d/
 	install -pm0644 conf/99-asahi-policy.lua $(DESTDIR)/$(DATA_DIR)/wireplumber/policy.lua.d/99-asahi-policy.lua
+	install -pm0644 conf/99-asahi-wireplumber.lua $(DESTDIR)/$(DATA_DIR)/wireplumber/main.lua.d/99-asahi.lua
 	install -pm0644 conf/99-asahi.conf $(DESTDIR)/$(DATA_DIR)/pipewire/pipewire.conf.d/99-asahi.conf
+	install -pm0644 conf/99-asahi-pulse.conf $(DESTDIR)/$(DATA_DIR)/pipewire/pipewire-pulse.conf.d/99-asahi.conf
 	install -dDm0755 $(DESTDIR)/$(DATA_DIR)/asahi-audio/
 
 j%: core
