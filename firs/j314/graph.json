@@ -216,6 +216,7 @@
         "device.api": "dsp",
         "audio.rate": 48000,
         "node.virtual": "false",
+        "priority.session": 850,
     },
     "playback.props": {
         "node.name": "effect_output.j314-convolver",

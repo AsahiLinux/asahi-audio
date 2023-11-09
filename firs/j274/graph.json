@@ -44,7 +44,8 @@
         "audio.channels": "2",
         "audio.position": ["FL", "FR"],
         "audio.rate": 48000,
-        "node.virtual": "false"
+        "node.virtual": "false",
+        "priority.session": 850,
     },
     "playback.props": {
         "node.name": "effect_output.j274-convolver",
