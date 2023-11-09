@@ -22,7 +22,8 @@ ratelimit = {
     }
   },
   apply_properties = {
-    ["audio.rate"] = 48000,
+    -- First entry is the fallback, hence 48k first
+    ["audio.allowed-rates"] = "48000,44100",
   }
 }
 table.insert(alsa_monitor.rules, ratelimit)
