@@ -13,3 +13,16 @@ mod_args = {
   ["uclamp.max"] = 64
 }
 load_pw_module("rt", mod_args)
+
+ratelimit = {
+  matches = {
+    {
+      { "media.class", "matches", "*/Sink" },
+      { "node.name", "matches", "alsa_output.platform-sound.HiFi__hw_J*_1__sink" }
+    }
+  },
+  apply_properties = {
+    ["audio.rate"] = 48000,
+  }
+}
+table.insert(alsa_monitor.rules, ratelimit)
