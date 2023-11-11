@@ -27,3 +27,6 @@ ratelimit = {
   }
 }
 table.insert(alsa_monitor.rules, ratelimit)
+
+-- Load our policy to force the raw speaker volume to 100%
+load_script("policy-asahi.lua")
