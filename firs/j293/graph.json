@@ -191,6 +191,7 @@
         "device.api": "dsp",
         "node.virtual": "false",
         "priority.session": 850,
+        "state.default-channel-volume": 0.343,
     },
     "playback.props": {
         "node.name": "effect_output.j293-convolver",
