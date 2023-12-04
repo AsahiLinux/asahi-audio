@@ -40,20 +40,6 @@ j313 = {
 }
 table.insert(dsp_policy.policy.rules, j313)
 
---- J313 (MacBook Air 13", M1, 2020)
---- THIS IS FOR OLD KERNELS AND WILL BE REMOVED IN A FUTURE RELEASE
-j313_compat = {
-  matches = {
-    {
-      { "media.class", "matches", "*/Sink" },
-      { "node.name", "=", "alsa_output.platform-sound.HiFi__hw_J313_1__sink" }
-    }
-  },
-  filter_chain = '/usr/share/asahi-audio/j313/graph_compat.json',
-  hide_parent = true
-}
-table.insert(dsp_policy.policy.rules, j313_compat)
-
 -- J415 (MacBook Air 15", M2, 2023)
 j415 = {
   matches = {
