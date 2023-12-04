@@ -18,6 +18,21 @@ ratelimit = {
   matches = {
     {
       { "media.class", "matches", "*/Sink" },
+      { "node.name", "matches", "alsa_output.platform-sound.HiFi__hw_AppleJ*_1__sink" }
+    }
+  },
+  apply_properties = {
+    -- First entry is the fallback, hence 48k first
+    ["audio.allowed-rates"] = "48000,44100",
+  }
+}
+table.insert(alsa_monitor.rules, ratelimit)
+
+-- THIS IS FOR OLDER KERNELS AND WILL BE REMOVED IN A FUTURE RELEASE
+ratelimit_compat = {
+  matches = {
+    {
+      { "media.class", "matches", "*/Sink" },
       { "node.name", "matches", "alsa_output.platform-sound.HiFi__hw_J*_1__sink" }
     }
   },

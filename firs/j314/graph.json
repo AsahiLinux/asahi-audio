@@ -221,7 +221,7 @@
     },
     "playback.props": {
         "node.name": "effect_output.j314-convolver",
-        "target.object": "alsa_output.platform-sound.HiFi__hw_J314_1__sink",
+        "target.object": "alsa_output.platform-sound.HiFi__hw_AppleJ314_1__sink",
         "node.passive": "true",
         "audio.channels": "6",
         "audio.rate": 48000,

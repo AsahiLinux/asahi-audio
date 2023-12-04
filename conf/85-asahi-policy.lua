@@ -7,7 +7,7 @@ j293 = {
   matches = {
     {
       { "media.class", "matches", "*/Sink" },
-      { "node.name", "=", "alsa_output.platform-sound.HiFi__hw_J293_1__sink" }
+      { "node.name", "=", "alsa_output.platform-sound.HiFi__hw_AppleJ293_1__sink" }
     }
   },
   filter_chain = '/usr/share/asahi-audio/j293/graph.json',
@@ -19,7 +19,7 @@ j493 = {
   matches = {
     {
       { "media.class", "matches", "*/Sink" },
-      { "node.name", "=", "alsa_output.platform-sound.HiFi__hw_J493_1__sink" }
+      { "node.name", "=", "alsa_output.platform-sound.HiFi__hw_AppleJ493_1__sink" }
     }
   },
   filter_chain = '/usr/share/asahi-audio/j293/graph-j493.json',
@@ -32,7 +32,7 @@ j313 = {
   matches = {
     {
       { "media.class", "matches", "*/Sink" },
-      { "node.name", "=", "alsa_output.platform-sound.HiFi__hw_J313_1__sink" }
+      { "node.name", "=", "alsa_output.platform-sound.HiFi__hw_AppleJ313_1__sink" }
     }
   },
   filter_chain = '/usr/share/asahi-audio/j313/graph.json',
@@ -40,12 +40,26 @@ j313 = {
 }
 table.insert(dsp_policy.policy.rules, j313)
 
+--- J313 (MacBook Air 13", M1, 2020)
+--- THIS IS FOR OLD KERNELS AND WILL BE REMOVED IN A FUTURE RELEASE
+j313_compat = {
+  matches = {
+    {
+      { "media.class", "matches", "*/Sink" },
+      { "node.name", "=", "alsa_output.platform-sound.HiFi__hw_J313_1__sink" }
+    }
+  },
+  filter_chain = '/usr/share/asahi-audio/j313/graph_compat.json',
+  hide_parent = true
+}
+table.insert(dsp_policy.policy.rules, j313_compat)
+
 -- J415 (MacBook Air 15", M2, 2023)
 j415 = {
   matches = {
     {
       { "media.class", "matches", "*/Sink" },
-      { "node.name", "=", "alsa_output.platform-sound.HiFi__hw_J415_1__sink" }
+      { "node.name", "=", "alsa_output.platform-sound.HiFi__hw_AppleJ415_1__sink" }
     }
   },
   filter_chain = '/usr/share/asahi-audio/j415/graph.json',
@@ -58,7 +72,7 @@ j314 = {
   matches = {
     {
       { "media.class", "matches", "*/Sink" },
-      { "node.name", "=", "alsa_output.platform-sound.HiFi__hw_J314_1__sink" }
+      { "node.name", "=", "alsa_output.platform-sound.HiFi__hw_AppleJ314_1__sink" }
     }
   },
   filter_chain = '/usr/share/asahi-audio/j314/graph.json',
@@ -70,7 +84,7 @@ j414 = {
   matches = {
     {
       { "media.class", "matches", "*/Sink" },
-      { "node.name", "=", "alsa_output.platform-sound.HiFi__hw_J414_1__sink" }
+      { "node.name", "=", "alsa_output.platform-sound.HiFi__hw_AppleJ414_1__sink" }
     }
   },
   filter_chain = '/usr/share/asahi-audio/j314/graph-j414.json',
@@ -83,7 +97,7 @@ j316 = {
   matches = {
     {
       { "media.class", "matches", "*/Sink" },
-      { "node.name", "=", "alsa_output.platform-sound.HiFi__hw_J316_1__sink" }
+      { "node.name", "=", "alsa_output.platform-sound.HiFi__hw_AppleJ316_1__sink" }
     }
   },
   filter_chain = '/usr/share/asahi-audio/j316/graph.json',
@@ -95,7 +109,7 @@ j416 = {
   matches = {
     {
       { "media.class", "matches", "*/Sink" },
-      { "node.name", "=", "alsa_output.platform-sound.HiFi__hw_J416_1__sink" }
+      { "node.name", "=", "alsa_output.platform-sound.HiFi__hw_AppleJ416_1__sink" }
     }
   },
   filter_chain = '/usr/share/asahi-audio/j316/graph-j416.json',
@@ -108,7 +122,7 @@ j274 = {
   matches = {
     {
       { "media.class", "matches", "*/Sink" },
-      { "node.name", "=", "alsa_output.platform-sound.HiFi__hw_J274_1__sink" }
+      { "node.name", "=", "alsa_output.platform-sound.HiFi__hw_AppleJ274_1__sink" }
     }
   },
   filter_chain = '/usr/share/asahi-audio/j274/graph.json',
@@ -119,7 +133,7 @@ j473 = {
   matches = {
     {
       { "media.class", "matches", "*/Sink" },
-      { "node.name", "=", "alsa_output.platform-sound.HiFi__hw_J473_1__sink" }
+      { "node.name", "=", "alsa_output.platform-sound.HiFi__hw_AppleJ473_1__sink" }
     }
   },
   filter_chain = '/usr/share/asahi-audio/j274/graph-j473.json',
@@ -130,7 +144,7 @@ j474 = {
   matches = {
     {
       { "media.class", "matches", "*/Sink" },
-      { "node.name", "=", "alsa_output.platform-sound.HiFi__hw_J474_1__sink" }
+      { "node.name", "=", "alsa_output.platform-sound.HiFi__hw_AppleJ474_1__sink" }
     }
   },
   filter_chain = '/usr/share/asahi-audio/j274/graph-j474.json',
