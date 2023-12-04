@@ -1,10 +1,10 @@
 -- Clamp util to keep Wireplumber on ecores
-mod_args = {
-  ["nice.level"] = -11,
-  ["uclamp.min"] = 0,
-  ["uclamp.max"] = 64
-}
-load_pw_module("rt", mod_args)
+-- mod_args = {
+--   ["nice.level"] = -11,
+--   ["uclamp.min"] = 0,
+--   ["uclamp.max"] = 64
+-- }
+-- load_pw_module("rt", mod_args)
 
 ratelimit = {
   matches = {
