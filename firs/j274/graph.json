@@ -23,7 +23,7 @@
                         "/usr/share/asahi-audio/j274/96.wav",
                         "/usr/share/asahi-audio/j274/192.wav"
                     ],
-                    "channel": "0"
+                    "channel": 0
                 }
             }
         ],
