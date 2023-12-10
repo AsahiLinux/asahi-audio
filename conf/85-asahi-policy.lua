@@ -137,3 +137,29 @@ j474 = {
   hide_parent = true
 }
 table.insert(dsp_policy.policy.rules, j474)
+
+-- Mac Studio (M1 Max/Ultra, 2021)
+j375 = {
+  matches = {
+    {
+      { "media.class", "matches", "*/Sink" },
+      { "node.name", "=", "alsa_output.platform-sound.HiFi__hw_AppleJ375_1__sink" }
+    }
+  },
+  filter_chain = '/usr/share/asahi-audio/j375/graph.json',
+  hide_parent = true
+}
+table.insert(dsp_policy.policy.rules, j375)
+
+-- Mac Studio (M2 Max/Ultra, 2023)
+j475 = {
+  matches = {
+    {
+      { "media.class", "matches", "*/Sink" },
+      { "node.name", "=", "alsa_output.platform-sound.HiFi__hw_AppleJ475_1__sink" }
+    }
+  },
+  filter_chain = '/usr/share/asahi-audio/j375/graph-j475.json',
+  hide_parent = true
+}
+table.insert(dsp_policy.policy.rules, j475)
