@@ -1,21 +1,46 @@
 {
-    "node.description": "Mac mini J274 Speaker",
+    "node.description": "Mac mini speaker",
     "media.name": "Mac mini Speaker",
     "filter.graph": {
         "nodes": [
             {
-                "type": "builtin",
-                "label": "mixer",
-                "name": "mix",
+                "type": "lv2",
+                "plugin": "https://chadmed.au/bankstown",
+                "name": "bassex",
                 "control": {
-                    "Gain 1": "0.5",
-                    "Gain 2": "0.5"
+                    "bypass": 0,
+                    "amt": 1.35,
+                    "sat_second": 1.3,
+                    "sat_third": 1.85,
+                    "blend": 0.65,
+                    "ceil": 200.0,
+                    "floor": 20.0,
+                }
+            },
+            {
+                "type": "lv2",
+                "plugin": "http://lsp-plug.in/plugins/lv2/loud_comp_mono",
+                "name": "ell",
+                "control": {
+                    "enabled": 1,
+                    "input": 1.0,
+                    "fft": 4
+                }
+            },
+            {
+                "type": "lv2",
+                "plugin": "http://lsp-plug.in/plugins/lv2/loud_comp_mono",
+                "name": "elr",
+                "control": {
+                    "enabled": 1,
+                    "input": 1.0,
+                    "fft": 4
                 }
             },
             {
                 "type": "builtin",
                 "label": "convolver",
-                "name": "conv",
+                "name": "convL",
                 "config": {
                     "filename": [
                         "/usr/share/asahi-audio/j274/44.wav",
@@ -23,19 +48,66 @@
                         "/usr/share/asahi-audio/j274/96.wav",
                         "/usr/share/asahi-audio/j274/192.wav"
                     ],
-                    "channel": "0"
+                    "channel": 0
+                }
+            },
+            {
+                "type": "builtin",
+                "label": "convolver",
+                "name": "convR",
+                "config": {
+                    "filename": [
+                        "/usr/share/asahi-audio/j274/44.wav",
+                        "/usr/share/asahi-audio/j274/48.wav",
+                        "/usr/share/asahi-audio/j274/96.wav",
+                        "/usr/share/asahi-audio/j274/192.wav"
+                    ],
+                    "channel": 0
+                }
+            },
+            {
+                "type": "lv2",
+                "plugin": "http://lsp-plug.in/plugins/lv2/compressor_stereo",
+                "name": "woofer_lim",
+                "control": {
+                    "sla": 5.0,
+                    "al": 1.0,
+                    "at": 1.0,
+                    "rt": 100.0,
+                    "cr": 15.0,
+                    "kn": 0.5
                 }
             }
         ],
         "links": [
-            {"output": "mix:Out", "input": "conv:In"}
+            {"output": "bassex:out_l", "input": "ell:in"},
+            {"output": "bassex:out_r", "input": "elr:in"},
+            {"output": "ell:out", "input": "convL:In"},
+            {"output": "elr:out", "input": "convR:In"},
+            {"output": "convL:Out", "input": "woofer_lim:in_l"},
+            {"output": "convR:Out", "input": "woofer_lim:in_r"},
         ],
         "inputs": [
-            "mix:In 1",
-            "mix:In 2"
+            "bassex:in_l",
+            "bassex:in_r"
         ],
         "outputs": [
-            "conv:Out"
+            "woofer_lim:out_l",
+            "woofer_lim:out_r"
+        ],
+        "capture.volumes": [
+            {
+                "control": "ell:volume",
+                "min": -25.0,
+                "max": 0.0,
+                "scale": "cubic"
+            },
+            {
+                "control": "elr:volume",
+                "min": -25.0,
+                "max": 0.0,
+                "scale": "cubic"
+            }
         ]
     },
     "capture.props": {
@@ -52,8 +124,8 @@
         "node.name": "effect_output.j274-convolver",
         "target.object": "alsa_output.platform-sound.HiFi__hw_AppleJ274_1__sink",
         "node.passive": "true",
-        "audio.channels": "1",
+        "audio.channels": "2",
         "audio.rate": 48000,
-        "audio.position": ["FL"]
+        "audio.position": ["FL", "FR"]
     }
 }
