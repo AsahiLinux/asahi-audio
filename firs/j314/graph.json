@@ -79,7 +79,7 @@
                         "/usr/share/asahi-audio/j314/woofers-192.wav"
                     ],
                     "channel": 0,
-                    "gain": 1.15
+                    "gain": 1.0
                 }
             },
             {
@@ -94,7 +94,7 @@
                         "/usr/share/asahi-audio/j314/woofers-192.wav"
                     ],
                     "channel": 0,
-                    "gain": 1.15
+                    "gain": 1.0
                 }
             },
             {
@@ -120,6 +120,21 @@
             {
                 "type": "lv2",
                 "plugin": "http://lsp-plug.in/plugins/lv2/compressor_stereo",
+                "name": "woofer_bp",
+                "control": {
+                    "shpm": 2,
+                    "shpf": 150.0,
+                    "sla": 5.0,
+                    "al": 0.65,
+                    "at": 1.0,
+                    "rt": 100.0,
+                    "cr": 3.0,
+                    "kn": 0.064
+                }
+            },
+            {
+                "type": "lv2",
+                "plugin": "http://lsp-plug.in/plugins/lv2/compressor_stereo",
                 "name": "woofer_lim",
                 "control": {
                     "sla": 5.0,
@@ -138,8 +153,10 @@
             {"output": "elr:out", "input": "convRT:In"},
             {"output": "ell:out", "input": "convLW:In"},
             {"output": "elr:out", "input": "convRW:In"},
-            {"output": "convLW:Out", "input": "woofer_lim:in_l"},
-            {"output": "convRW:Out", "input": "woofer_lim:in_r"},
+            {"output": "convLW:Out", "input": "woofer_bp:in_l"},
+            {"output": "convRW:Out", "input": "woofer_bp:in_r"},
+            {"output": "woofer_bp:out_l", "input": "woofer_lim:in_l"},
+            {"output": "woofer_bp:out_r", "input": "woofer_lim:in_r"},
             {"output": "woofer_lim:out_l", "input": "copyLW:In"},
             {"output": "woofer_lim:out_r", "input": "copyRW:In"},
             {"output": "woofer_lim:out_l", "input": "copyLW2:In"},
