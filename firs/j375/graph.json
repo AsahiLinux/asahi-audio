@@ -9,9 +9,9 @@
                 "name": "bassex",
                 "control": {
                     "bypass": 0,
-                    "amt": 1.35,
-                    "sat_second": 1.3,
-                    "sat_third": 1.85,
+                    "amt": 1.45,
+                    "sat_second": 1.75,
+                    "sat_third": 2.35,
                     "blend": 0.65,
                     "ceil": 200.0,
                     "floor": 20.0,
@@ -98,13 +98,13 @@
         "capture.volumes": [
             {
                 "control": "ell:volume",
-                "min": -25.0,
+                "min": -40.0,
                 "max": 0.0,
                 "scale": "cubic"
             },
             {
                 "control": "elr:volume",
-                "min": -25.0,
+                "min": -40.0,
                 "max": 0.0,
                 "scale": "cubic"
             }
