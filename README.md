@@ -1,9 +1,9 @@
 ## Linux userspace audio configuration for Apple Silicon Macs.
 
-Brought to you by the Asahi Linux team. Our goal is to provide a
-(subjectively) better-than-macOS audio experience on Apple Silicon
-Macs, and in doing so demonstrate that userspace audio management
-on Linux does not _need_ to suck in 2023.
+This repo contains DSP configuration files for Apple Silicon Macs supported by the
+Asahi Linux project. Our goal is to make the Asahi Linux audio experience better than macOS,
+and in doing so demonstrate that desktop Linux audio can be made fit for purpose with
+a little bit of effort.
 
 ### IMPORTANT
 This software is still pre-release and not ready for user consumption or
@@ -15,43 +15,80 @@ announcement will be made when speaker support is ready for wider release.
 ### Currently Supported Devices
 * MacBook Air (13-inch, M1, 2020)
 * MacBook Air (15-inch, M2, 2023)
-* MacBook Pro (14-inch, all 2021/2022 models)
-* MacBook Pro (16-inch, all 2021/2022 models) (_currently uses same EQ as 14"_)
-* Mac mini (all 2020-2023 Apple Silicon models)
+* MacBook Pro (13-inch, M1/M2, 2020/2022)
+* MacBook Pro (14-inch, M1/M2 Pro/Max, 2021/2023)
+* MacBook Pro (16-inch, M1/M2 Pro/Max, 2021/2023)
+* Mac mini (M1/M2/M2 Pro, 2020/2023)
+* Mac Studio (M1/M2 Max/Ultra, 2022/2023)
 
 ### Dependencies
 * speakersafetyd
-* linux-asahi 6.5-17 or above
-* PipeWire 0.3.81 or above
-* WirePlumber 0.4.14 or above
+* linux-asahi 6.6-6 or above
+* PipeWire 0.3.85 or above
+* WirePlumber 0.4.16 or above
 * Bankstown 1.0 or above
 * LSP Plugins (only the LV2 set of plugins are used)
 
-
 ### Why this is necessary
-Modern microspeakers aren't any better than microspeakers from
-20 years ago. What has improved is our ability to paper over
-their shortcomings with digital signal processing.
+Microspeakers are terrible. They are too small to reproduce any substantial bass at all,
+and are built too cheaply to behave in a linear fashion. You cannot change the laws of
+physics, and this applies universally. Bluetooth speakers, phones, TV, and yes even
+Apple's computers all have cheap and bad speakers either due to bill of material
+cost constraints, size constraints, or both. Modern Bluetooth speakers, phones, TVs
+and Macs often sound quite good, though. How do we explain this?
 
-This package applies EQ to the speakers in the form of an
-impulse response which acts over the input signal. It also
-performs some light-touch dynamics shaping to prevent
-overexcursion and make the volume range more natural.
+The answer is DSP. Computing power has become extremely cheap, cheaper than designing
+and manufacturing a good speaker. Not only this, but research into acoustics and our
+perception of sound (psyhchoacoustics) has been steadily increasing over the past couple
+of decades. We simply plaster over the limitations of tiny, cheap speakers by applying
+aggressive EQ profiles and other tricks in the digital domain.
+
+In the case of Apple Silicon machines, Apple has taken things one step further by including
+_actually good_ speakers on most modern Macs. The 14" MacBook Pro has 6 speakers in it,
+designed to be used as a stereo array. macOS can handle this just fine of course, but
+what about Linux?
+
+Until now, desktop Linux has not really had support for describing and properly driving
+devices like this. It's the reason that some higher-end laptops sound better in Windows -
+OEMs work with codec vendors to add all of this processing to their Windows sound drivers.
+Obviously, such a solution would never fly for desktop Linux.
+
+We have therefore worked closely with Pipewire and Wireplumber upstream to design a more
+flexible, modular solution that can be used by anyone for any device that may require similar
+handling, improving the desktop Linux audio experience for everyone.
+
+### How does it work?
+Pipewire and Wireplumber are able to create virtual audio devices comprised of a chain of
+audio plugins. These virtual devices can be backed by real hardware - a virtual sink can
+be set to output to a target sound card, and a virtual source can capture audio from a real
+line level input or microphone.
+
+We worked with upstream to enhance this functionality with the ability to automatically
+select and load the correct virtual device, and to hide the unusable raw hardware from view.
+
+This repo contains files which describe a virtual device for each supported Mac, as well as
+instructions for Wireplumber to load the correct one on startup. It also contains impulse
+responses for each Mac which encode the necessary EQ filters. On startup, Pipewire and
+Wireplumber detect which Mac they are running on, load in the correct virtual device and impulse
+responses, and then hide the "raw" hardware output from the rest of userspace. All your software
+sees is a stereo output, and all you hear is quality sound from your Mac running Linux!
+
 
 ### Better than macOS?
-It is our opinion that the tuning applied by Apple is, while technically
-impressive, too tryhard. Apple make liberal use of psychoacoustics, fancy
-phasing, equal-loudness curves and other tricks to extend the bass response,
-widen the stereo image, and implement virtual surround. While this is appealing
-to a certain class of consumer, it renders the machines useless for professional
-use as the sound is too far from reference. Their psychoacoustic bass implementation
-is also prone to saturation artefacts at high volumes.
+While it is evident that Apple put an immense amount of effort into ensuring these
+machines sound good, they tried a little _too_ hard...
 
-We believe that delivering a simpler, natural-sounding stereo system will not only
-more accurately reproduce source material, but will be a more enjoyable listening
-experience for a wider cross-section of users.
+On top of being tuned for an exaggerated Harman curve, macOS makes use of psychoacoustic bass
+enhancement, dynamic range compression, and spatialisation tricks to spice up the acoustic
+profile of these machines. Unfortunately not only does this colour the sound
+in a way reminiscent of early Beats headphones, Apple actually have a _bug_ in their
+psychoacoustic bass processor that causes audible artefacts. This is whole setup is quite
+simply unacceptable for anything but the most casual of listening.
 
-### Disclaimer
+We aim to deliver a mostly flat response across the audible range that will faithfully reproduce
+source material without adding an excessive amount of colour.
+
+### WARNING
 Speaker support is still a work in progress, and no guarantees as to its safety
 or quality are made. As above, no support whatsoever will be provided to users
 regarding the installation or use of any speaker-related items until public
