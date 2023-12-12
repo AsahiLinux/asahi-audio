@@ -49,7 +49,7 @@
                         "/usr/share/asahi-audio/j316/tweeters-192.wav"
                     ],
                     "channel": 0,
-                    "gain": 1.0
+                    "gain": 0.708
                 }
             },
             {
@@ -64,7 +64,7 @@
                         "/usr/share/asahi-audio/j316/tweeters-92.wav"
                     ],
                     "channel": 0,
-                    "gain": 1.0
+                    "gain": 0.708
                 }
             },
             {
@@ -79,7 +79,7 @@
                         "/usr/share/asahi-audio/j316/woofers-192.wav"
                     ],
                     "channel": 0,
-                    "gain": 1.0
+                    "gain": 0.708
                 }
             },
             {
@@ -94,7 +94,7 @@
                         "/usr/share/asahi-audio/j316/woofers-192.wav"
                     ],
                     "channel": 0,
-                    "gain": 1.0
+                    "gain": 0.708
                 }
             },
             {
