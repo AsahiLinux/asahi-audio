@@ -49,7 +49,7 @@ j%: core
 	install -pm0644 -t $(DESTDIR)/$(DATA_DIR)/asahi-audio/$@/ $(wildcard firs/$@/*)
 
 
-install: aliases core j274 j293 j313 j314 j316 j415 j375
+install: aliases core j274 j293 j313 j314 j316 j413 j415 j375
 
 uninstall:
 	rm -f $(DESTDIR)/$(DATA_DIR)/wireplumber/policy.lua.d/99-asahi-policy.lua

@@ -1,0 +1,185 @@
+{
+    "node.description": "MacBook Air J413 Speakers",
+    "media.name": "MacBook Air J413 Speakers",
+    "filter.graph": {
+        "nodes": [
+            {
+                "type": "lv2",
+                "plugin": "https://chadmed.au/bankstown",
+                "name": "bassex",
+                "control": {
+                    "bypass": 0,
+                    "amt": 1.5,
+                    "sat_second": 1.3,
+                    "sat_third": 2.5,
+                    "blend": 0.65,
+                    "ceil": 200.0,
+                    "floor": 20.0,
+                }
+            },
+            {
+                "type": "lv2",
+                "plugin": "http://lsp-plug.in/plugins/lv2/loud_comp_mono",
+                "name": "ell",
+                "control": {
+                    "enabled": 1,
+                    "input": 1.0,
+                    "fft": 4
+                }
+            },
+            {
+                "type": "lv2",
+                "plugin": "http://lsp-plug.in/plugins/lv2/loud_comp_mono",
+                "name": "elr",
+                "control": {
+                    "enabled": 1,
+                    "input": 1.0,
+                    "fft": 4
+                }
+            },
+            {
+                "type": "builtin",
+                "label": "convolver",
+                "name": "convLT",
+                "config": {
+                    "filename": [
+                        "/usr/share/asahi-audio/j413/tweeters-44.wav",
+                        "/usr/share/asahi-audio/j413/tweeters-48.wav",
+                        "/usr/share/asahi-audio/j413/tweeters-96.wav",
+                        "/usr/share/asahi-audio/j413/tweeters-192.wav"
+                    ],
+                    "channel": 0,
+                    "gain": 1.5
+                }
+            },
+            {
+                "type": "builtin",
+                "label": "convolver",
+                "name": "convRT",
+                "config": {
+                    "filename": [
+                        "/usr/share/asahi-audio/j413/tweeters-44.wav",
+                        "/usr/share/asahi-audio/j413/tweeters-48.wav",
+                        "/usr/share/asahi-audio/j413/tweeters-96.wav",
+                        "/usr/share/asahi-audio/j413/tweeters-92.wav"
+                    ],
+                    "channel": 0,
+                    "gain": 1.5
+                }
+            },
+            {
+                "type": "builtin",
+                "label": "convolver",
+                "name": "convLW",
+                "config": {
+                    "filename": [
+                        "/usr/share/asahi-audio/j413/woofers-44.wav",
+                        "/usr/share/asahi-audio/j413/woofers-48.wav",
+                        "/usr/share/asahi-audio/j413/woofers-96.wav",
+                        "/usr/share/asahi-audio/j413/woofers-192.wav"
+                    ],
+                    "channel": 0,
+                    "gain": 1.3
+                }
+            },
+            {
+                "type": "builtin",
+                "label": "convolver",
+                "name": "convRW",
+                "config": {
+                    "filename": [
+                        "/usr/share/asahi-audio/j413/woofers-44.wav",
+                        "/usr/share/asahi-audio/j413/woofers-48.wav",
+                        "/usr/share/asahi-audio/j413/woofers-96.wav",
+                        "/usr/share/asahi-audio/j413/woofers-192.wav"
+                    ],
+                    "channel": 0,
+                    "gain": 1.3
+                }
+            },
+            {
+                "type": "lv2",
+                "plugin": "http://lsp-plug.in/plugins/lv2/compressor_stereo",
+                "name": "woofer_bp",
+                "control": {
+                    "shpm": 2,
+                    "shpf": 150.0,
+                    "sla": 5.0,
+                    "al": 0.65,
+                    "at": 1.0,
+                    "rt": 100.0,
+                    "cr": 3.0,
+                    "kn": 0.064
+                }
+            },
+            {
+                "type": "lv2",
+                "plugin": "http://lsp-plug.in/plugins/lv2/compressor_stereo",
+                "name": "woofer_lim",
+                "control": {
+                    "sla": 5.0,
+                    "al": 1.0,
+                    "at": 1.0,
+                    "rt": 100.0,
+                    "cr": 15.0,
+                    "kn": 0.5
+                }
+            }
+        ],
+        "links": [
+            {"output": "bassex:out_l", "input": "ell:in"},
+            {"output": "bassex:out_r", "input": "elr:in"},
+            {"output": "ell:out", "input": "convLT:In"},
+            {"output": "elr:out", "input": "convRT:In"},
+            {"output": "ell:out", "input": "convLW:In"},
+            {"output": "elr:out", "input": "convRW:In"},
+            {"output": "convLW:Out", "input": "woofer_bp:in_l"},
+            {"output": "convRW:Out", "input": "woofer_bp:in_r"},
+            {"output": "woofer_bp:out_l", "input": "woofer_lim:in_l"},
+            {"output": "woofer_bp:out_r", "input": "woofer_lim:in_r"},
+        ],
+        "inputs": [
+            "bassex:in_l",
+            "bassex:in_r"
+        ],
+        "outputs": [
+            "woofer_lim:out_l",
+            "woofer_lim:out_r",
+            "convLT:Out",
+            "convRT:Out"
+        ],
+        "capture.volumes": [
+            {
+                "control": "ell:volume",
+                "min": -47.5,
+                "max": 0.0,
+                "scale": "cubic"
+            },
+            {
+                "control": "elr:volume",
+                "min": -47.5,
+                "max": 0.0,
+                "scale": "cubic"
+            }
+        ]
+    },
+    "capture.props": {
+        "node.name": "audio_effect.j413-convolver",
+        "media.class": "Audio/Sink",
+        "audio.channels": "2",
+        "audio.position": ["FL", "FR"],
+        "audio.rate": 48000,
+        "device.api": "dsp",
+        "node.virtual": "false",
+        "priority.session": 850,
+        "state.default-channel-volume": 0.343,
+    },
+    "playback.props": {
+        "node.name": "effect_output.j413-convolver",
+        "target.object": "alsa_output.platform-sound.HiFi__hw_AppleJ413_1__sink",
+        "node.passive": "true",
+        "audio.channels": "4",
+        "audio.rate": 48000,
+        "audio.position": ["FL", "FR", "RL", "RR"]
+    }
+}
