@@ -9,12 +9,12 @@
                 "name": "bassex",
                 "control": {
                     "bypass": 0,
-                    "amt": 1.45,
-                    "sat_second": 1.3,
-                    "sat_third": 2.5,
-                    "blend": 0.65,
-                    "ceil": 200.0,
-                    "floor": 20.0,
+                    "amt": 1.4,
+                    "sat_second": 1.05,
+                    "sat_third": 1.6,
+                    "blend": 0.31,
+                    "ceil": 220.0,
+                    "floor": 140.0,
                 }
             },
             {
@@ -51,7 +51,7 @@
                         "/usr/share/asahi-audio/j293/front-192.wav"
                     ],
                     "channel": 0,
-                    "gain": 1.3
+                    "gain": 0.92
                 }
             },
             {
@@ -66,7 +66,7 @@
                         "/usr/share/asahi-audio/j293/front-192.wav"
                     ],
                     "channel": 0,
-                    "gain": 1.3
+                    "gain": 0.92
                 }
             },
             {
@@ -81,7 +81,7 @@
                         "/usr/share/asahi-audio/j293/rear-192.wav"
                     ],
                     "channel": 0,
-                    "gain": 1.3
+                    "gain": 0.92
                 }
             },
             {
@@ -96,7 +96,7 @@
                         "/usr/share/asahi-audio/j293/rear-192.wav"
                     ],
                     "channel": 0,
-                    "gain": 1.3
+                    "gain": 0.92
                 }
             },
             {
@@ -109,12 +109,12 @@
                     "ce_0": 1,
                     "sla_0": 5.0,
                     "scr_0": 1.75,
-                    "al_0": 0.725,
+                    "al_0": 0.625,
                     "at_0": 1.0,
                     "rt_0": 100,
                     "kn_0": 0.125,
                     "cbe_1": 1,
-                    "sf_1": 200.0,
+                    "sf_1": 250.0,
                     "ce_1": 0,
                     "cbe_2": 0,
                     "ce_2": 0,
@@ -151,12 +151,12 @@
                     "ce_0": 1,
                     "sla_0": 5.0,
                     "scr_0": 1.75,
-                    "al_0": 0.725,
+                    "al_0": 0.625,
                     "at_0": 1.0,
                     "rt_0": 100,
                     "kn_0": 0.125,
                     "cbe_1": 1,
-                    "sf_1": 200.0,
+                    "sf_1": 250.0,
                     "ce_1": 0,
                     "cbe_2": 0,
                     "ce_2": 0,
