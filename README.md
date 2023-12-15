@@ -5,15 +5,9 @@ Asahi Linux project. Our goal is to make the Asahi Linux audio experience better
 and in doing so demonstrate that desktop Linux audio can be made fit for purpose with
 a little bit of effort.
 
-### IMPORTANT
-This software is still pre-release and not ready for user consumption or
-beta testing. As it exists in this repo, it is deliberately non-functional
-to prevent intrepid users from damaging their machines. Please do not ask for
-help with installing this, or enabling speaker support on your machine. An
-announcement will be made when speaker support is ready for wider release.
-
 ### Currently Supported Devices
 * MacBook Air (13-inch, M1, 2020)
+* MacBook Air (13-inch, M2, 2022)
 * MacBook Air (15-inch, M2, 2023)
 * MacBook Pro (13-inch, M1/M2, 2020/2022)
 * MacBook Pro (14-inch, M1/M2 Pro/Max, 2021/2023)
@@ -23,7 +17,7 @@ announcement will be made when speaker support is ready for wider release.
 
 ### Dependencies
 * speakersafetyd
-* linux-asahi 6.6-6 or above
+* linux-asahi 6.6-11 or above
 * PipeWire 0.3.85 or above
 * WirePlumber 0.4.16 or above
 * Bankstown 1.0 or above
@@ -87,10 +81,3 @@ simply unacceptable for anything but the most casual of listening.
 
 We aim to deliver a mostly flat response across the audible range that will faithfully reproduce
 source material without adding an excessive amount of colour.
-
-### WARNING
-Speaker support is still a work in progress, and no guarantees as to its safety
-or quality are made. As above, no support whatsoever will be provided to users
-regarding the installation or use of any speaker-related items until public
-support has been announced. You assume all risk to - and responsibility for -
-your machine should you choose to try and use the speakers.
