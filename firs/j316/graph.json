@@ -9,9 +9,9 @@
                 "name": "bassex",
                 "control": {
                     "bypass": 0,
-                    "amt": 1.9,
+                    "amt": 1.8,
                     "sat_second": 1.05,
-                    "sat_third": 2.6,
+                    "sat_third": 2.5,
                     "blend": 0.31,
                     "ceil": 220.0,
                     "floor": 100.0,
@@ -51,7 +51,7 @@
                         "/usr/share/asahi-audio/j316/tweeters-192.wav"
                     ],
                     "channel": 0,
-                    "gain": 0.708
+                    "gain": 0.55
                 }
             },
             {
@@ -66,7 +66,7 @@
                         "/usr/share/asahi-audio/j316/tweeters-92.wav"
                     ],
                     "channel": 0,
-                    "gain": 0.708
+                    "gain": 0.55
                 }
             },
             {
@@ -81,7 +81,7 @@
                         "/usr/share/asahi-audio/j316/woofers-192.wav"
                     ],
                     "channel": 0,
-                    "gain": 0.708
+                    "gain": 0.55
                 }
             },
             {
@@ -96,7 +96,7 @@
                         "/usr/share/asahi-audio/j316/woofers-192.wav"
                     ],
                     "channel": 0,
-                    "gain": 0.708
+                    "gain": 0.55
                 }
             },
             {
@@ -128,13 +128,13 @@
                     "cbe_0": 1,
                     "ce_0": 1,
                     "sla_0": 5.0,
-                    "cr_0": 1.75,
-                    "al_0": 0.725,
-                    "at_0": 1.0,
+                    "cr_0": 1.85,
+                    "al_0": 0.800,
+                    "at_0": 10.0,
                     "rt_0": 100,
                     "kn_0": 0.125,
                     "cbe_1": 1,
-                    "sf_1": 200.0,
+                    "sf_1": 250.0,
                     "ce_1": 0,
                     "cbe_2": 0,
                     "ce_2": 0,
