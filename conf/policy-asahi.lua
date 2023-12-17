@@ -23,7 +23,7 @@ function handleDevice(device)
 
   for p in device:iterate_params("Route") do
     local route = parseParam(p, "Route")
-    if not route or route.description ~= "Speakers" then
+    if not route or (route.description ~= "Speakers" and route.description ~= "Speaker") then
       goto skip_route
     end
 
