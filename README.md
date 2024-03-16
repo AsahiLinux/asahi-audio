@@ -36,7 +36,7 @@ and Macs often sound quite good, though. How do we explain this?
 
 The answer is DSP. Computing power has become extremely cheap, cheaper than designing
 and manufacturing a good speaker. Not only this, but research into acoustics and our
-perception of sound (psyhchoacoustics) has been steadily increasing over the past couple
+perception of sound (psychoacoustics) has been steadily increasing over the past couple
 of decades. We simply plaster over the limitations of tiny, cheap speakers by applying
 aggressive EQ profiles and other tricks in the digital domain.
 
@@ -50,12 +50,12 @@ devices like this. It's the reason that some higher-end laptops sound better in 
 OEMs work with codec vendors to add all of this processing to their Windows sound drivers.
 Obviously, such a solution would never fly for desktop Linux.
 
-We have therefore worked closely with Pipewire and Wireplumber upstream to design a more
+We have therefore worked closely with PipeWire and WirePlumber upstream to design a more
 flexible, modular solution that can be used by anyone for any device that may require similar
 handling, improving the desktop Linux audio experience for everyone.
 
 ### How does it work?
-Pipewire and Wireplumber are able to create virtual audio devices comprised of a chain of
+PipeWire and WirePlumber are able to create virtual audio devices comprised of a chain of
 audio plugins. These virtual devices can be backed by real hardware - a virtual sink can
 be set to output to a target sound card, and a virtual source can capture audio from a real
 line level input or microphone.
@@ -64,9 +64,9 @@ We worked with upstream to enhance this functionality with the ability to automa
 select and load the correct virtual device, and to hide the unusable raw hardware from view.
 
 This repo contains files which describe a virtual device for each supported Mac, as well as
-instructions for Wireplumber to load the correct one on startup. It also contains impulse
-responses for each Mac which encode the necessary EQ filters. On startup, Pipewire and
-Wireplumber detect which Mac they are running on, load in the correct virtual device and impulse
+instructions for WirePlumber to load the correct one on startup. It also contains impulse
+responses for each Mac which encode the necessary EQ filters. On startup, PipeWire and
+WirePlumber detect which Mac they are running on, load in the correct virtual device and impulse
 responses, and then hide the "raw" hardware output from the rest of userspace. All your software
 sees is a stereo output, and all you hear is quality sound from your Mac running Linux!
 
