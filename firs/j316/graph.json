@@ -12,7 +12,7 @@
                     "amt": 1.8,
                     "sat_second": 1.05,
                     "sat_third": 2.5,
-                    "blend": 0.31,
+                    "blend": 1.0,
                     "ceil": 220.0,
                     "floor": 100.0,
                 }
