@@ -5,6 +5,20 @@ Asahi Linux project. Our goal is to make the Asahi Linux audio experience better
 and in doing so demonstrate that desktop Linux audio can be made fit for purpose with
 a little bit of effort.
 
+### IMPORTANT INFO FOR PACKAGERS
+WirePlumber 0.5 introduced a large, breaking API change that required a complete rework
+of asahi-audio. As such, development has been split across two branches to maintain compatibility
+with systems using WirePlumber 0.4.x and prior. The **main** branch will track WirePlumber
+upstream, and the **compat/1.x** branch will maintain support for WirePlumber 0.4.x.
+
+**You are currently on the compat/1.x branch**.
+
+Fixes for machines already supported will be backported to new 1.x releases until near the
+end of 2024. After this point, no more 1.x releases will be made, and support for machines
+using WirePlumber 0.4.x will end.
+
+**If your distro is still on WirePlumber 0.4.x, do not package >=2.x releases.**
+
 ### Currently Supported Devices
 * MacBook Air (13-inch, M1, 2020)
 * MacBook Air (13-inch, M2, 2022)
