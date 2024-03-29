@@ -209,7 +209,7 @@
         "audio.channels": "2",
         "audio.position": ["FL", "FR"],
         "device.api": "dsp",
-        "audio.rate": 48000,
+        "audio.allowed-rates": [48000, 44100],
         "node.virtual": "false",
         "priority.session": 850,
         "state.default-channel-volume": 0.343,
@@ -220,7 +220,7 @@
         "target.object": "alsa_output.platform-sound.HiFi__hw_AppleJ316_1__sink",
         "node.passive": "true",
         "audio.channels": "6",
-        "audio.rate": 48000,
+        "audio.allowed-rates": [48000, 44100],
         "audio.position": ["FL", "FR", "RL", "RR", "FC", "LFE"]
     }
 }

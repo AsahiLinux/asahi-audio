@@ -228,7 +228,7 @@
         "media.class": "Audio/Sink",
         "audio.channels": "2",
         "audio.position": ["FL", "FR"],
-        "audio.rate": 48000,
+        "audio.allowed-rates": [48000, 44100],
         "device.api": "dsp",
         "node.virtual": "false",
         "priority.session": 850,
@@ -240,7 +240,7 @@
         "target.object": "alsa_output.platform-sound.HiFi__hw_AppleJ293_1__sink",
         "node.passive": "true",
         "audio.channels": "4",
-        "audio.rate": 48000,
+        "audio.allowed-rates": [48000, 44100],
         "audio.position": ["FL", "FR", "RL", "RR"]
     }
 }
