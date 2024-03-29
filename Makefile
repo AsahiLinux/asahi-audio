@@ -49,4 +49,7 @@ install: aliases core j274 j293 j313 j314 j316 j413 j415 j375
 
 uninstall:
 	rm -rf $(DESTDIR)/$(DATA_DIR)/asahi-audio/
+	rm -rf $(DESTDIR)/$(DATA_DIR)/wireplumber/wireplumber.conf.d/99-asahi.conf
+	rm -rf $(DESTDIR)/$(DATA_DIR)/wireplumber/scripts/device/asahi-limit-volume.lua
 	rm -rf $(DESTDIR)/$(DATA_DIR)/pipewire/pipewire.conf.d/99-asahi.conf
+	rm -rf $(DESTDIR)/$(DATA_DIR)/pipewire/pipewire-pulse.conf.d/99-asahi.conf
