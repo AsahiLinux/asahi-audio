@@ -32,8 +32,8 @@ using WirePlumber 0.4.x will end.
 ### Dependencies
 * speakersafetyd
 * linux-asahi 6.6-11 or above (see notes)
-* PipeWire 0.3.85 or above
-* WirePlumber 0.4.16 or above
+* PipeWire 1.0 or above
+* WirePlumber 0.5 or above
 * Bankstown 1.0 or above
 * LSP Plugins 1.0.20 or above (only the LV2 set of plugins are used)
 
