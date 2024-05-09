@@ -213,7 +213,7 @@
         "audio.allowed-rates": [48000, 44100],
         "node.virtual": "false",
         "priority.session": 850,
-        "state.default-channel-volume": 0.343,
+        "state.default-volume": 0.343,
         "device.icon-name": "audio-speakers"
     },
     "playback.props": {
