@@ -9,9 +9,9 @@
                 "name": "bassex",
                 "control": {
                     "bypass": 0,
-                    "amt": 1.25,
+                    "amt": 1.45,
                     "sat_second": 1.65,
-                    "sat_third": 2.35,
+                    "sat_third": 2.20,
                     "blend": 1.0,
                     "ceil": 200.0,
                     "floor": 20.0,
