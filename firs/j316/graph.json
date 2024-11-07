@@ -217,7 +217,8 @@
     },
     "playback.props": {
         "node.name": "effect_output.j316-convolver",
-        "target.object": "alsa_output.platform-sound.HiFi__hw_AppleJ316_1__sink",
+        "target.object": "alsa_output.platform-sound.RawSpeakers",
+        "node.dont-fallback": "true",
         "node.passive": "true",
         "audio.channels": "6",
         "audio.allowed-rates": [48000, 44100],
