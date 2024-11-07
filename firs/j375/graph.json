@@ -123,7 +123,8 @@
     },
     "playback.props": {
         "node.name": "effect_output.j375-convolver",
-        "target.object": "alsa_output.platform-sound.HiFi__hw_AppleJ375_1__sink",
+        "target.object": "alsa_output.platform-sound.RawSpeakers",
+        "node.dont-fallback": "true",
         "node.passive": "true",
         "audio.channels": "2",
         "audio.allowed-rates": [48000, 44100],
