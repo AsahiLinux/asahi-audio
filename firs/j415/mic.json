@@ -1,0 +1,105 @@
+{
+    "node.description": "MacBook Pro J415 Microphone",
+    "media.name": "MacBook Pro J415 Microphone",
+    "filter.graph": {
+        "nodes": [
+            {
+                "type": "builtin",
+                "label": "bq_highpass",
+                "name": "hpf1",
+                "control": {
+                    "Freq": 120,
+                    "Gain": 1,
+                    "Q": 0.707
+                }
+            },
+            {
+                "type": "builtin",
+                "label": "bq_highpass",
+                "name": "hpf2",
+                "control": {
+                    "Freq": 120,
+                    "Gain": 1,
+                    "Q": 0.707
+                }
+            },
+            {
+                "type": "builtin",
+                "label": "bq_highpass",
+                "name": "hpf3",
+                "control": {
+                    "Freq": 120,
+                    "Gain": 1,
+                    "Q": 0.707
+                }
+            },
+            {
+                "type": "builtin",
+                "label": "delay",
+                "name": "delayO",
+                "control": {
+                    "Delay (s)": 0.0000652
+                },
+                "config": {
+                    "max-delay": 0.0000700
+                }
+            },
+            {
+                "type": "builtin",
+                "label": "delay",
+                "name": "delayL",
+                "control": {
+                    "Delay (s)": 0.0000261
+                },
+                "config": {
+                    "max-delay": 0.0000300
+                }
+            },
+            {
+                "type": "builtin",
+                "label": "mixer",
+                "name": "mix",
+                "control": {
+                    "Gain 1": 20,
+                    "Gain 2": 20,
+                    "Gain 3": 30
+                }
+            }
+        ],
+        "links": [
+            { "output": "hpf1:Out", "input": "delayL:In" },
+            { "output": "hpf2:Out", "input": "mix:In 2" },
+            { "output": "hpf3:Out", "input": "delayO:In" },
+            { "output": "delayL:Out", "input": "mix:In 1" },
+            { "output": "delayO:Out", "input": "mix:In 3" },
+        ],
+        "inputs": [
+            "hpf1:In",
+            "hpf2:In",
+            "hpf3:In"
+        ],
+        "outputs": [
+            "mix:Out"
+        ],
+    },
+    "capture.props": {
+        "node.name": "audio_effect.j415-mic",
+        "audio.channels": "3",
+        "audio.position": ["FL", "FR", "LFE"],
+        "audio.allowed-rates": [48000],
+        "node.virtual": "false",
+        "state.default-volume": 1.00,
+        "device.icon-name": "audio-microphone",
+        "target.object": "alsa_input.platform-24ac00000.aop.multichannel-input",
+        "node.passive": "true"
+    },
+    "playback.props": {
+        "node.name": "effect_output.j415-mic",
+        "media.class": "Audio/Source",
+        "node.passive": "true",
+        "audio.channels": "1",
+        "node.virtual": "false",
+        "audio.allowed-rates": [48000],
+        "audio.position": ["AUX0"]
+    }
+}
