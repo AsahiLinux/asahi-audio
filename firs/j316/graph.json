@@ -123,7 +123,6 @@
                 "name": "woofer_bp",
                 "control": {
                     "mode": 0,
-                    "cbe_0": 1,
                     "ce_0": 1,
                     "sla_0": 5.0,
                     "cr_0": 1.85,
