@@ -62,7 +62,7 @@
                         "/usr/share/asahi-audio/j415/tweeters-44.wav",
                         "/usr/share/asahi-audio/j415/tweeters-48.wav",
                         "/usr/share/asahi-audio/j415/tweeters-96.wav",
-                        "/usr/share/asahi-audio/j415/tweeters-92.wav"
+                        "/usr/share/asahi-audio/j415/tweeters-192.wav"
                     ],
                     "channel": 0,
                     "gain": 1.0
