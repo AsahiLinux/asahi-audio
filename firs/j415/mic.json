@@ -5,81 +5,72 @@
         "nodes": [
             {
                 "type": "builtin",
-                "label": "bq_highpass",
-                "name": "hpf1",
+                "label": "mixer",
+                "name": "mixL",
                 "control": {
-                    "Freq": 120,
-                    "Gain": 1,
-                    "Q": 0.707
+                    "Gain 1": 1
                 }
-            },
+            }
             {
                 "type": "builtin",
-                "label": "bq_highpass",
-                "name": "hpf2",
+                "label": "mixer",
+                "name": "mixR",
                 "control": {
-                    "Freq": 120,
-                    "Gain": 1,
-                    "Q": 0.707
+                    "Gain 1": 1
                 }
-            },
+            }
             {
                 "type": "builtin",
-                "label": "bq_highpass",
-                "name": "hpf3",
+                "label": "mixer",
+                "name": "mixO",
                 "control": {
-                    "Freq": 120,
-                    "Gain": 1,
-                    "Q": 0.707
+                    "Gain 1": 1.5
                 }
-            },
+            }
             {
-                "type": "builtin",
-                "label": "delay",
-                "name": "delayO",
+                "type": "lv2",
+                "plugin": "https://chadmed.au/triforce",
+                "name": "bf",
                 "control": {
-                    "Delay (s)": 0.0000652
-                },
-                "config": {
-                    "max-delay": 0.0000700
-                }
-            },
-            {
-                "type": "builtin",
-                "label": "delay",
-                "name": "delayL",
-                "control": {
-                    "Delay (s)": 0.0000261
-                },
-                "config": {
-                    "max-delay": 0.0000300
+                    "h_angle": 80.0,
+                    "v_angle": 45.0,
+                    "opt_freq": 20.0,
+                    "t_win": 500.0
                 }
             },
             {
                 "type": "builtin",
                 "label": "mixer",
-                "name": "mix",
+                "name": "mixFinal",
                 "control": {
-                    "Gain 1": 20,
-                    "Gain 2": 20,
-                    "Gain 3": 30
+                    "Gain 1": 85
                 }
-            }
+            },
+            {
+                "type": "builtin",
+                "label": "bq_highpass",
+                "name": "hpf",
+                "control": {
+                    "Freq": 20,
+                    "Gain": 1,
+                    "Q": 0.707
+                }
+            },
         ],
         "links": [
-            { "output": "hpf1:Out", "input": "delayL:In" },
-            { "output": "hpf2:Out", "input": "mix:In 2" },
-            { "output": "hpf3:Out", "input": "delayO:In" },
-            { "output": "delayL:Out", "input": "mix:In 1" },
-            { "output": "delayO:Out", "input": "mix:In 3" },
+            { "output": "mixL:Out", "input": "bf:in_1" },
+            { "output": "mixR:Out", "input": "bf:in_2" },
+            { "output": "mixO:Out", "input": "bf:in_3" },
+            { "output": "bf:out", "input": "mixFinal:In 1" },
+            { "output": "mixFinal:Out", "input": "hpf:In" },
         ],
         "inputs": [
-            "hpf1:In",
-            "hpf2:In",
-            "hpf3:In"
+            "mixL:In 1",
+            "mixR:In 1",
+            "mixO:In 1",
         ],
         "outputs": [
-            "mix:Out"
+            "hpf:Out"
         ],
     },
     "capture.props": {
@@ -90,7 +81,7 @@
         "node.virtual": "false",
         "state.default-volume": 1.00,
         "device.icon-name": "audio-microphone",
-        "target.object": "alsa_input.platform-24ac00000.aop.multichannel-input",
+        "target.object": "alsa_input.platform-snd_soc_apple_aop.2.auto.HiFi__Mic__source",
         "node.passive": "true"
     },
     "playback.props": {
