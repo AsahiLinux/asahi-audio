@@ -43,7 +43,7 @@
                 "label": "mixer",
                 "name": "mixFinal",
                 "control": {
-                    "Gain 1": 85
+                    "Gain 1": 60
                 }
             },
             {
@@ -51,7 +51,7 @@
                 "label": "bq_highpass",
                 "name": "hpf",
                 "control": {
-                    "Freq": 20,
+                    "Freq": 120,
                     "Gain": 1,
                     "Q": 0.707
                 }
