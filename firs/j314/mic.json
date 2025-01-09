@@ -1,0 +1,96 @@
+{
+    "node.description": "MacBook Pro J314 Microphone",
+    "media.name": "MacBook Air J314 Microphone",
+    "filter.graph": {
+        "nodes": [
+            {
+                "type": "builtin",
+                "label": "mixer",
+                "name": "mixL",
+                "control": {
+                    "Gain 1": 1.5
+                }
+            }
+            {
+                "type": "builtin",
+                "label": "mixer",
+                "name": "mixR",
+                "control": {
+                    "Gain 1": 1.5
+                }
+            }
+            {
+                "type": "builtin",
+                "label": "mixer",
+                "name": "mixO",
+                "control": {
+                    "Gain 1": 1
+                }
+            }
+            {
+                "type": "lv2",
+                "plugin": "https://chadmed.au/triforce",
+                "name": "bf",
+                "control": {
+                    "h_angle": 200.0,
+                    "v_angle": 45.0,
+                    "opt_freq": 20.0,
+                    "t_win": 500.0
+                }
+            },
+            {
+                "type": "builtin",
+                "label": "mixer",
+                "name": "mixFinal",
+                "control": {
+                    "Gain 1": 60
+                }
+            },
+            {
+                "type": "builtin",
+                "label": "bq_highpass",
+                "name": "hpf",
+                "control": {
+                    "Freq": 120,
+                    "Gain": 1,
+                    "Q": 0.707
+                }
+            },
+        ],
+        "links": [
+            { "output": "mixL:Out", "input": "bf:in_1" },
+            { "output": "mixR:Out", "input": "bf:in_2" },
+            { "output": "mixO:Out", "input": "bf:in_3" },
+            { "output": "bf:out", "input": "mixFinal:In 1" },
+            { "output": "mixFinal:Out", "input": "hpf:In" },
+        ],
+        "inputs": [
+            "mixL:In 1",
+            "mixR:In 1",
+            "mixO:In 1",
+        ],
+        "outputs": [
+            "hpf:Out"
+        ],
+    },
+    "capture.props": {
+        "node.name": "audio_effect.j314-mic",
+        "audio.channels": "3",
+        "audio.position": ["FL", "FR", "LFE"],
+        "audio.allowed-rates": [48000],
+        "node.virtual": "false",
+        "state.default-volume": 1.00,
+        "device.icon-name": "audio-microphone",
+        "target.object": "alsa_input.platform-snd_soc_apple_aop.2.auto.HiFi__Mic__source",
+        "node.passive": "true"
+    },
+    "playback.props": {
+        "node.name": "effect_output.j314-mic",
+        "media.class": "Audio/Source",
+        "node.passive": "true",
+        "audio.channels": "1",
+        "node.virtual": "false",
+        "audio.allowed-rates": [48000],
+        "audio.position": ["AUX0"]
+    }
+}
