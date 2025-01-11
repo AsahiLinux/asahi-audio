@@ -35,6 +35,7 @@ using WirePlumber 0.4.x will end.
 * PipeWire 1.0 or above
 * WirePlumber 0.5.2 or above
 * Bankstown 1.1.0 or above
+* Triforce 0.1.0 or above
 * LSP Plugins 1.0.20 or above (only the LV2 set of plugins are used)
 
 **Notes**: Due to a critical bug in lsp-plugins speaker are enabled via
