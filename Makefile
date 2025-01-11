@@ -26,6 +26,9 @@ aliases-j316:
 graph-%.json: graph.json
 	sed -E "s/([^/][jJ])$$(basename "$$PWD" | tr -d j)/\1$(patsubst graph-j%.json,%,$@)/g" $< >$@
 
+mic-%.json: mic.json
+	sed -E "s/([^/][jJ])$$(basename "$$PWD" | tr -d j)/\1$(patsubst mic-j%.json,%,$@)/g" $< >$@
+
 clean:
 	rm -f firs/*/graph-*.json
 
