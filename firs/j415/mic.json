@@ -33,8 +33,8 @@
                 "name": "bf",
                 "control": {
                     "h_angle": 80.0,
-                    "v_angle": 45.0,
-                    "opt_freq": 20.0,
+                    "v_angle": 0.0,
+                    "opt_freq": 1100.0,
                     "t_win": 500.0
                 }
             },
@@ -43,7 +43,7 @@
                 "label": "mixer",
                 "name": "mixFinal",
                 "control": {
-                    "Gain 1": 60
+                    "Gain 1": 65
                 }
             },
             {
