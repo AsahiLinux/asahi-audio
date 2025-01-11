@@ -90,6 +90,7 @@
         "node.passive": "true",
         "audio.channels": "1",
         "node.virtual": "false",
+        "state.default-volume": 0.343,
         "audio.allowed-rates": [48000],
         "audio.position": ["AUX0"]
     }
