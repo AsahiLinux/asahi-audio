@@ -24,7 +24,7 @@
                 "control": {
                     "enabled": 1,
                     "input": 1.0,
-                    "fft": 4
+                    "fft": 2
                 }
             },
             {
@@ -34,7 +34,7 @@
                 "control": {
                     "enabled": 1,
                     "input": 1.0,
-                    "fft": 4
+                    "fft": 2
                 }
             },
             {
