@@ -19,7 +19,7 @@ using WirePlumber 0.4.x will end.
 
 **If your distro is still on WirePlumber 0.4.x, do not package >=2.x releases.**
 
-### Currently Supported Devices
+### Currently Supported Devices (speakers)
 * MacBook Air (13-inch, M1, 2020)
 * MacBook Air (13-inch, M2, 2022)
 * MacBook Air (15-inch, M2, 2023)
@@ -28,6 +28,11 @@ using WirePlumber 0.4.x will end.
 * MacBook Pro (16-inch, M1/M2 Pro/Max, 2021/2023)
 * Mac mini (M1/M2/M2 Pro, 2020/2023)
 * Mac Studio (M1/M2 Max/Ultra, 2022/2023)
+
+### Currently Supported Devices (microphones)
+* MacBook Air (15-inch, M2, 2023)
+* MacBook Pro (14-inch, M1/M2 Pro/Max, 2021/2023)
+* MacBook Pro (16-inch, M1/M2 Pro/Max, 2021/2023)
 
 ### Dependencies
 * speakersafetyd
