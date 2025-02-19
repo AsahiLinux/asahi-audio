@@ -1,3 +1,6 @@
 *.kate-swp
 **/graph-j*.json
 **/mic-j*.json
+/asahi-audio\.spec
+/asahi-audio-*\.src\.rpm
+/asahi-audio-*\.tar\.gz
