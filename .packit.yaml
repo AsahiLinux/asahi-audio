@@ -1,0 +1,39 @@
+# See the documentation for more information:
+# https://packit.dev/docs/configuration/
+
+specfile_path: asahi-audio.spec
+files_to_sync:
+  - asahi-audio.spec
+  - .packit.yaml
+
+actions:
+  # Fetch the specfile from Rawhide and disable rpmautospec
+  post-upstream-clone: "bash -c \"curl -s https://src.fedoraproject.org/rpms/asahi-audio/raw/main/f/asahi-audio.spec | sed -e '/^%autochangelog$/d' > asahi-audio.spec\""
+
+srpm_build_deps:
+  - bash
+  - curl
+  - sed
+
+jobs:
+- job: copr_build
+  trigger: commit
+  owner: "@asahi"
+  project: packit-builds
+  targets:
+    - fedora-all-aarch64
+    - fedora-rawhide-i386
+    - fedora-rawhide-ppc64le
+    - fedora-rawhide-s390x
+    - fedora-rawhide-x86_64
+
+- job: copr_build
+  trigger: pull_request
+  owner: "@asahi"
+  project: packit-builds
+  targets:
+    - fedora-all-aarch64
+    - fedora-rawhide-i386
+    - fedora-rawhide-ppc64le
+    - fedora-rawhide-s390x
+    - fedora-rawhide-x86_64
