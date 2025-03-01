@@ -24,7 +24,7 @@ a little bit of effort.
 
 ### Dependencies
 * speakersafetyd
-* linux-asahi 6.6-11 or above (see notes)
+* linux-asahi 6.12.12-1 or above (see notes)
 * PipeWire 1.0 or above
 * WirePlumber 0.5.2 or above
 * Bankstown 1.1.0 or above
