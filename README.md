@@ -16,6 +16,7 @@ a little bit of effort.
 * Mac Studio (M1/M2 Max/Ultra, 2022/2023)
 
 ### Currently Supported Devices (microphones)
+* MacBook Air (13-inch, M1, 2020)
 * MacBook Air (13-inch, M2, 2023)
 * MacBook Air (15-inch, M2, 2023)
 * MacBook Pro (14-inch, M1/M2 Pro/Max, 2021/2023)
