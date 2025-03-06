@@ -85,7 +85,7 @@
         "node.virtual": "false",
         "state.default-volume": 1.00,
         "device.icon-name": "audio-microphone",
-        "target.object": "alsa_input.platform-snd_soc_apple_aop.2.auto.HiFi__Mic__source",
+        "target.object": "alsa_input.platform-snd_soc_apple_aop.1.auto.HiFi__Mic__source",
         "node.passive": "true"
     },
     "playback.props": {
