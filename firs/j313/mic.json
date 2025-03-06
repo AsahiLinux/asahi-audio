@@ -8,7 +8,7 @@
                 "label": "mixer",
                 "name": "mixL",
                 "control": {
-                    "Gain 1": 1
+                    "Gain 1": 2
                 }
             }
             {
@@ -16,7 +16,7 @@
                 "label": "mixer",
                 "name": "mixR",
                 "control": {
-                    "Gain 1": 1
+                    "Gain 1": 2
                 }
             }
             {
@@ -24,7 +24,7 @@
                 "label": "mixer",
                 "name": "mixO",
                 "control": {
-                    "Gain 1": 1
+                    "Gain 1": 2
                 }
             }
             {
@@ -47,7 +47,7 @@
                 "label": "mixer",
                 "name": "mixFinal",
                 "control": {
-                    "Gain 1": 65
+                    "Gain 1": 60
                 }
             },
             {
