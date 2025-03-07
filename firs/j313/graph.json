@@ -155,6 +155,8 @@
         "device.icon-name": "audio-speakers"
     },
     "playback.props": {
+        "node.description": "MacBook Air J313 Speakers (Playback)",
+        "media.name": "MacBook Air J313 Speakers (Playback)",
         "node.name": "effect_output.j313-convolver",
         "target.object": "alsa_output.platform-sound.RawSpeakers",
         "node.dont-fallback": "true",
