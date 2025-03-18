@@ -15,7 +15,7 @@ aliases-j375:
 	make -f $$PWD/Makefile -C firs/j375 graph-j475.json
 
 aliases-j293:
-	make -f $$PWD/Makefile -C firs/j293 graph-j493.json
+	make -f $$PWD/Makefile -C firs/j293 graph-j493.json mic-j493.json
 
 aliases-j314:
 	make -f $$PWD/Makefile -C firs/j314 graph-j414.json mic-j414.json
