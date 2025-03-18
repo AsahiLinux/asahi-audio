@@ -32,14 +32,14 @@
                 "plugin": "https://chadmed.au/triforce",
                 "name": "bf",
                 "control": {
-                    "h_angle": 80.0,
+                    "h_angle": 120.0,
                     "v_angle": 0.0,
                     "opt_freq": 1100.0,
                     "t_win": 500.0,
                     "mic2_x": 0.02,
                     "mic2_y": 0.00,
-                    "mic3_x": 0.04,
-                    "mic3_y": 0.00,
+                    "mic3_x": 0.01,
+                    "mic3_y": 0.0173,
                 }
             },
             {
