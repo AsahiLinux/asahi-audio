@@ -91,6 +91,7 @@
     "playback.props": {
         "node.name": "effect_output.j313-mic",
         "media.class": "Audio/Source",
+        "priority.session": 2005,
         "node.passive": "true",
         "audio.channels": "1",
         "node.virtual": "false",
