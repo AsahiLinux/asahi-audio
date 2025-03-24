@@ -234,6 +234,8 @@
         "device.icon-name": "audio-speakers"
     },
     "playback.props": {
+        "node.description": "MacBook Pro J293 Speakers (Playback)",
+        "media.name": "MacBook Pro J293 Speakers (Playback)",
         "node.name": "effect_output.j293-convolver",
         "target.object": "alsa_output.platform-sound.RawSpeakers",
         "node.dont-fallback": "true",
