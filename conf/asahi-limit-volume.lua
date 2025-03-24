@@ -40,7 +40,7 @@ function handleDevice(device)
         device = route.device,
         props = Pod.Object(props),
       }
-      Log.warning(param, "Forcing Speaker route props: " .. tostring(device))
+      Log.debug(param, "Forcing Speaker route props: " .. tostring(device))
       device:set_param("Route", param)
     end
     ::skip_route::
