@@ -96,7 +96,7 @@
         "audio.channels": "1",
         "node.virtual": "false",
         "state.default-volume": 0.343,
-        "audio.allowed-rates": [48000],
+        "audio.allowed-rates": [8000, 11025, 16000, 22050, 44100, 48000],
         "audio.position": ["AUX0"]
     }
 }
