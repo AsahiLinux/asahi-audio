@@ -215,6 +215,8 @@
         "device.icon-name": "audio-speakers"
     },
     "playback.props": {
+        "node.description": "MacBook Pro J316 Speakers (Playback)",
+        "media.name": "MacBook Pro J316 Speakers (Playback)",
         "node.name": "effect_output.j316-convolver",
         "node.description": "MacBook Pro J316 Speakers DSP Out",
         "media.name": "MacBook Pro J316 Speakers DSP Out",

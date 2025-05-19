@@ -152,6 +152,8 @@
         "device.icon-name": "audio-speakers"
     },
     "playback.props": {
+        "node.description": "Mac mini speaker (Playback)",
+        "media.name": "Mac mini Speaker (Playback)",
         "node.name": "effect_output.j274-convolver",
         "node.description": "Mac mini Speaker DSP Out",
         "media.name": "Mac mini Speaker DSP Out",

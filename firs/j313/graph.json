@@ -155,6 +155,8 @@
         "device.icon-name": "audio-speakers"
     },
     "playback.props": {
+        "node.description": "MacBook Air J313 Speakers (Playback)",
+        "media.name": "MacBook Air J313 Speakers (Playback)",
         "node.name": "effect_output.j313-convolver",
         "node.description": "MacBook Air J313 Speakers DSP Out",
         "media.name": "MacBook Air J313 Speakers DSP Out",
