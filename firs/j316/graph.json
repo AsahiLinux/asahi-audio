@@ -216,6 +216,8 @@
     },
     "playback.props": {
         "node.name": "effect_output.j316-convolver",
+        "node.description": "MacBook Pro J316 Speakers DSP Out",
+        "media.name": "MacBook Pro J316 Speakers DSP Out",
         "target.object": "alsa_output.platform-sound.RawSpeakers",
         "node.dont-fallback": "true",
         "node.passive": "true",

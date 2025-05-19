@@ -190,6 +190,8 @@
     },
     "playback.props": {
         "node.name": "effect_output.j413-convolver",
+        "node.description": "MacBook Air J413 Speakers DSP Out",
+        "media.name": "MacBook Air J413 Speakers DSP Out",
         "target.object": "alsa_output.platform-sound.RawSpeakers",
         "node.dont-fallback": "true",
         "node.passive": "true",

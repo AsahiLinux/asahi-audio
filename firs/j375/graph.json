@@ -123,6 +123,8 @@
     },
     "playback.props": {
         "node.name": "effect_output.j375-convolver",
+        "node.description": "Mac Studio Speaker DSP Out",
+        "media.name": "Mac Studio Speaker DSP Out",
         "target.object": "alsa_output.platform-sound.RawSpeakers",
         "node.dont-fallback": "true",
         "node.passive": "true",
