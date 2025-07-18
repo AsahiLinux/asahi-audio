@@ -25,15 +25,12 @@ a little bit of effort.
 
 ### Dependencies
 * speakersafetyd
-* linux-asahi 6.12.12-1 or above (see notes)
+* linux-asahi 6.12.12-1 or above
 * PipeWire 1.0 or above
 * WirePlumber 0.5.2 or above
 * Bankstown 1.1.0 or above
 * Triforce 0.2.0 or above
 * LSP Plugins 1.0.20 or above (only the LV2 set of plugins are used)
-
-**Notes**: Due to a critical bug in lsp-plugins speaker are enabled via
-out-of-tree patches to ensure known fixed LSP plugins are present.
 
 ### Why this is necessary
 Microspeakers are terrible. They are too small to reproduce any substantial bass at all,
