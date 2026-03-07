@@ -115,7 +115,7 @@
         "media.class": "Audio/Sink",
         "audio.channels": "2",
         "audio.position": ["FL", "FR"],
-        "audio.allowed-rates": [48000, 44100],
+        "audio.allowed-rates": [96000, 88200, 48000, 44100],
         "node.virtual": "false",
         "priority.session": 850,
         "state.default-volume": 0.343,
@@ -129,7 +129,7 @@
         "node.dont-fallback": "true",
         "node.passive": "true",
         "audio.channels": "2",
-        "audio.allowed-rates": [48000, 44100],
+        "audio.allowed-rates": [96000, 88200, 48000, 44100],
         "audio.position": ["FL", "FR"]
     }
 }
