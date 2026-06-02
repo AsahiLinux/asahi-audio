@@ -6,22 +6,28 @@ DATA_DIR ?= $(PREFIX)/share/
 
 all: aliases
 
-aliases: aliases-j274 aliases-j293 aliases-j314 aliases-j316 aliases-j375
+aliases: aliases-j274 aliases-j293 aliases-j314 aliases-j316 aliases-j375 aliases-j413 aliases-j415
 
 aliases-j274:
 	make -f $$PWD/Makefile -C firs/j274 graph-j473.json graph-j474.json
 
 aliases-j375:
-	make -f $$PWD/Makefile -C firs/j375 graph-j475.json
+	make -f $$PWD/Makefile -C firs/j375 graph-j475.json graph-j575.json
 
 aliases-j293:
 	make -f $$PWD/Makefile -C firs/j293 graph-j493.json mic-j493.json
 
 aliases-j314:
-	make -f $$PWD/Makefile -C firs/j314 graph-j414.json mic-j414.json
+	make -f $$PWD/Makefile -C firs/j314 graph-j414.json mic-j414.json graph-j514.json
 
 aliases-j316:
-	make -f $$PWD/Makefile -C firs/j316 graph-j416.json mic-j416.json
+	make -f $$PWD/Makefile -C firs/j316 graph-j416.json mic-j416.json graph-j516.json
+
+aliases-j413:
+	make -f $$PWD/Makefile -C firs/j413 graph-j613.json
+
+aliases-j415:
+	make -f $$PWD/Makefile -C firs/j415 graph-j615.json
 
 graph-%.json: graph.json
 	sed -E "s/([^/][jJ])$$(basename "$$PWD" | tr -d j)/\1$(patsubst graph-j%.json,%,$@)/g" $< >$@
