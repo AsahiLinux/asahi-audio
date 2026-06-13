@@ -9,12 +9,13 @@
                 "name": "bassex",
                 "control": {
                     "bypass": 0,
-                    "amt": 1.8,
+                    "amt": 1.65,
                     "sat_second": 1.05,
-                    "sat_third": 2.5,
+                    "sat_third": 1.85,
                     "blend": 1.0,
-                    "ceil": 220.0,
-                    "floor": 100.0,
+                    "ceil": 125.0,
+                    "floor": 20.0,
+                    "final_hp": 125.0,
                 }
             },
             {
@@ -49,7 +50,7 @@
                         "/usr/share/asahi-audio/j316/tweeters-192.wav"
                     ],
                     "channel": 0,
-                    "gain": 0.55
+                    "gain": 1.0
                 }
             },
             {
@@ -64,7 +65,7 @@
                         "/usr/share/asahi-audio/j316/tweeters-192.wav"
                     ],
                     "channel": 0,
-                    "gain": 0.55
+                    "gain": 1.0
                 }
             },
             {
@@ -79,7 +80,7 @@
                         "/usr/share/asahi-audio/j316/woofers-192.wav"
                     ],
                     "channel": 0,
-                    "gain": 0.55
+                    "gain": 1.0
                 }
             },
             {
@@ -94,7 +95,7 @@
                         "/usr/share/asahi-audio/j316/woofers-192.wav"
                     ],
                     "channel": 0,
-                    "gain": 0.55
+                    "gain": 1.0
                 }
             },
             {
