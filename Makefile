@@ -18,16 +18,16 @@ aliases-j293:
 	make -f $$PWD/Makefile -C firs/j293 graph-j493.json mic-j493.json
 
 aliases-j314:
-	make -f $$PWD/Makefile -C firs/j314 graph-j414.json mic-j414.json graph-j504.json graph-j514.json
+	make -f $$PWD/Makefile -C firs/j314 graph-j414.json mic-j414.json graph-j504.json mic-j504.json graph-j514.json mic-j514.json
 
 aliases-j316:
-	make -f $$PWD/Makefile -C firs/j316 graph-j416.json mic-j416.json graph-j516.json
+	make -f $$PWD/Makefile -C firs/j316 graph-j416.json mic-j416.json graph-j516.json mic-j516.json
 
 aliases-j413:
-	make -f $$PWD/Makefile -C firs/j413 graph-j613.json
+	make -f $$PWD/Makefile -C firs/j413 graph-j613.json mic-j613.json
 
 aliases-j415:
-	make -f $$PWD/Makefile -C firs/j415 graph-j615.json
+	make -f $$PWD/Makefile -C firs/j415 graph-j615.json mic-j615.json
 
 graph-%.json: graph.json
 	sed -E "s/([^/][jJ])$$(basename "$$PWD" | tr -d j)/\1$(patsubst graph-j%.json,%,$@)/g" $< >$@
