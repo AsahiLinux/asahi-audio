@@ -80,7 +80,7 @@
     "capture.props": {
         "node.name": "audio_effect.j413-mic",
         "audio.channels": "3",
-        "audio.position": ["FL", "FR", "LFE"],
+        "audio.position": ["AUX0", "AUX1", "AUX2"],
         "audio.allowed-rates": [48000],
         "node.virtual": "false",
         "state.default-volume": 1.00,
