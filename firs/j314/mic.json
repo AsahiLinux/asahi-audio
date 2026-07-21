@@ -8,7 +8,7 @@
                 "label": "mixer",
                 "name": "mixL",
                 "control": {
-                    "Gain 1": 1.5
+                    "Gain 1": 3
                 }
             }
             {
@@ -16,7 +16,7 @@
                 "label": "mixer",
                 "name": "mixR",
                 "control": {
-                    "Gain 1": 1.5
+                    "Gain 1": 3
                 }
             }
             {
@@ -24,7 +24,7 @@
                 "label": "mixer",
                 "name": "mixO",
                 "control": {
-                    "Gain 1": 1
+                    "Gain 1": 2
                 }
             }
             {
@@ -45,9 +45,17 @@
             {
                 "type": "builtin",
                 "label": "mixer",
-                "name": "mixFinal",
+                "name": "boostInter",
                 "control": {
-                    "Gain 1": 80
+                    "Gain 1": 7.6
+                }
+            },
+            {
+                "type": "builtin",
+                "label": "mixer",
+                "name": "boostFinal",
+                "control": {
+                    "Gain 1": 7.6
                 }
             },
             {
@@ -65,8 +73,9 @@
             { "output": "mixL:Out", "input": "bf:in_1" },
             { "output": "mixR:Out", "input": "bf:in_2" },
             { "output": "mixO:Out", "input": "bf:in_3" },
-            { "output": "bf:out", "input": "mixFinal:In 1" },
-            { "output": "mixFinal:Out", "input": "hpf:In" },
+            { "output": "bf:out", "input": "boostInter:In 1" },
+            { "output": "boostInter:Out", "input": "boostFinal:In 1" },
+            { "output": "boostFinal:Out", "input": "hpf:In" },
         ],
         "inputs": [
             "mixL:In 1",
