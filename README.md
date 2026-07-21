@@ -6,24 +6,20 @@ and in doing so demonstrate that desktop Linux audio can be made fit for purpose
 a little bit of effort.
 
 ### Currently Supported Devices (speakers)
-* MacBook Air (13-inch, M1, 2020)
-* MacBook Air (13-inch, M2/M3, 2022/2024)
-* MacBook Air (15-inch, M2/M3, 2023/2024)
+* MacBook Air (13-inch, M1-M3)
+* MacBook Air (15-inch, M2-M3)
 * MacBook Pro (13-inch, M1/M2, 2020/2022)
-* MacBook Pro (14-inch, M3, 2023)
-* MacBook Pro (14-inch, M1/M2/M3 Pro/Max, 2021/2023)
-* MacBook Pro (16-inch, M1/M2/M3 Pro/Max, 2021/2023)
-* Mac mini (M1/M2/M2 Pro, 2020/2023)
-* Mac Studio (M1/M2 Max/Ultra, 2022/2023)
+* MacBook Pro (14-inch, M3, M1-M3 Pro/Max)
+* MacBook Pro (16-inch, M1-M3 Pro/Max)
+* Mac mini (M1/M2/M2 Pro)
+* Mac Studio (M1-M3 Max/Ultra)
 
 ### Currently Supported Devices (microphones)
-* MacBook Air (13-inch, M1, 2020)
-* MacBook Air (13-inch, M2/M3, 2022/2024)
-* MacBook Air (15-inch, M2/M3, 2023/2024)
+* MacBook Air (13-inch, M1-M3)
+* MacBook Air (15-inch, M2-M3)
 * MacBook Pro (13-inch, M1/M2, 2020/2022)
-* MacBook Pro (14-inch, M3, 2023)
-* MacBook Pro (14-inch, M1/M2/M3 Pro/Max, 2021/2023)
-* MacBook Pro (16-inch, M1/M2/M3 Pro/Max, 2021/2023)
+* MacBook Pro (14-inch, M3, M1-M3 Pro/Max)
+* MacBook Pro (16-inch, M1-M3 Pro/Max)
 
 ### Dependencies
 * speakersafetyd
