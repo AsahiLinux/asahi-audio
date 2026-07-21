@@ -130,6 +130,6 @@
         "node.passive": "true",
         "audio.channels": "2",
         "audio.allowed-rates": [96000, 88200, 48000, 44100],
-        "audio.position": ["FL", "FR"]
+        "audio.position": ["AUX0", "AUX1"]
     }
 }
