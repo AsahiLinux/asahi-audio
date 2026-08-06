@@ -7,25 +7,27 @@ a little bit of effort.
 
 ### Currently Supported Devices (speakers)
 * MacBook Air (13-inch, M1, 2020)
-* MacBook Air (13-inch, M2, 2022)
-* MacBook Air (15-inch, M2, 2023)
+* MacBook Air (13-inch, M2/M3, 2022/2024)
+* MacBook Air (15-inch, M2/M3, 2023/2024)
 * MacBook Pro (13-inch, M1/M2, 2020/2022)
-* MacBook Pro (14-inch, M1/M2 Pro/Max, 2021/2023)
-* MacBook Pro (16-inch, M1/M2 Pro/Max, 2021/2023)
+* MacBook Pro (14-inch, M3, 2023)
+* MacBook Pro (14-inch, M1/M2/M3 Pro/Max, 2021/2023)
+* MacBook Pro (16-inch, M1/M2/M3 Pro/Max, 2021/2023)
 * Mac mini (M1/M2/M2 Pro, 2020/2023)
 * Mac Studio (M1/M2 Max/Ultra, 2022/2023)
 
 ### Currently Supported Devices (microphones)
 * MacBook Air (13-inch, M1, 2020)
-* MacBook Air (13-inch, M2, 2022)
-* MacBook Air (15-inch, M2, 2023)
+* MacBook Air (13-inch, M2/M3, 2022/2024)
+* MacBook Air (15-inch, M2/M3, 2023/2024)
 * MacBook Pro (13-inch, M1/M2, 2020/2022)
-* MacBook Pro (14-inch, M1/M2 Pro/Max, 2021/2023)
-* MacBook Pro (16-inch, M1/M2 Pro/Max, 2021/2023)
+* MacBook Pro (14-inch, M3, 2023)
+* MacBook Pro (14-inch, M1/M2/M3 Pro/Max, 2021/2023)
+* MacBook Pro (16-inch, M1/M2/M3 Pro/Max, 2021/2023)
 
 ### Dependencies
 * speakersafetyd
-* linux-asahi 6.12.12-1 or above
+* linux-asahi 6.12.12-1 or above (7.1.6-1 for M3)
 * PipeWire 1.0 or above
 * WirePlumber 0.5.2 or above
 * Bankstown 1.1.0 or above
