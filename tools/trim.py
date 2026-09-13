@@ -1,3 +1,5 @@
+# SPDX-License-Identifier: GPL-2.0-or-later
+
 import sys, numpy, scipy
 
 EPSILON = 1e-10 # -200dB

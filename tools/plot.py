@@ -1,3 +1,5 @@
+# SPDX-License-Identifier: GPL-2.0-or-later
+
 import sys, numpy, scipy
 from scipy import signal
 import matplotlib.scale as scale

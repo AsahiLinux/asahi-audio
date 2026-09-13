@@ -88,3 +88,7 @@ simply unacceptable for anything but the most casual of listening.
 
 We aim to deliver a mostly flat response across the audible range that will faithfully reproduce
 source material without adding an excessive amount of colour.
+
+### Licences
+Versions up to and including 4.2 are provided under the terms of the MIT licence. Code
+checked in thereafter is licenced under the GNU General Public License version 2.
