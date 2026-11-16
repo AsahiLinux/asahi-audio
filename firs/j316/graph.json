@@ -125,7 +125,7 @@
                 "control": {
                     "mode": 0,
                     "ce_0": 1,
-                    "sla_0": 5.0,
+                    "sla_0": 0.0,
                     "cr_0": 1.85,
                     "al_0": 0.800,
                     "at_0": 10.0,
@@ -151,7 +151,7 @@
                 "plugin": "http://lsp-plug.in/plugins/lv2/compressor_stereo",
                 "name": "woofer_lim",
                 "control": {
-                    "sla": 5.0,
+                    "sla": 0.250,
                     "al": 1.0,
                     "at": 1.0,
                     "rt": 100.0,

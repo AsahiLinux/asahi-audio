@@ -70,7 +70,7 @@
                 "plugin": "http://lsp-plug.in/plugins/lv2/compressor_stereo",
                 "name": "woofer_lim",
                 "control": {
-                    "sla": 5.0,
+                    "sla": 0.250,
                     "al": 1.0,
                     "at": 1.0,
                     "rt": 100.0,
