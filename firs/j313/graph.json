@@ -108,6 +108,24 @@
                     "cr": 15.0,
                     "kn": 0.5
                 }
+            },
+            {
+                "type": "lv2",
+                "plugin": "http://lsp-plug.in/plugins/lv2/limiter_stereo",
+                "name": "safety_lim",
+                "control": {
+                    "enabled": 1,
+                    "mode": 8,
+                    "th": 0.891251,
+                    "knee": 1.0,
+                    "boost": 0,
+                    "alr": 0,
+                    "lk": 5.0,
+                    "at": 1.0,
+                    "rt": 5.0,
+                    "ovs": 0,
+                    "slink": 100.0
+                }
             }
         ],
         "links": [
@@ -119,14 +137,16 @@
             {"output": "convR:Out", "input": "woofer_bp:in_r"},
             {"output": "woofer_bp:out_l", "input": "woofer_lim:in_l"},
             {"output": "woofer_bp:out_r", "input": "woofer_lim:in_r"},
+            {"output": "woofer_lim:out_l", "input": "safety_lim:in_l"},
+            {"output": "woofer_lim:out_r", "input": "safety_lim:in_r"},
         ],
         "inputs": [
             "bassex:in_l",
             "bassex:in_r"
         ],
         "outputs": [
-            "woofer_lim:out_l",
-            "woofer_lim:out_r",
+            "safety_lim:out_l",
+            "safety_lim:out_r",
         ],
         "capture.volumes": [
             {
